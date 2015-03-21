@@ -10,8 +10,11 @@ describe( 'AppController', function() {
       AppCtrl = $controller( 'AppController', { $location: $location, $scope: $scope });
     }));
 
-    it( 'should pass a dummy test', inject( function() {
-      expect( AppCtrl ).toBeTruthy();
+    it( 'should know the name and version of the app', inject( function() {
+      expect($scope.appName).toBe('Octo | Know Your Neighborhood');
+      expect($scope.appVersion).toBe('1.0.0');
     }));
+
+
   });
 });

@@ -10,12 +10,17 @@
                     "header": {
                         controller: 'SearchController',
                         templateUrl: 'views/header/header.tpl.html'
+                    },
+                    "main": {
+                        controller: 'HomeController',
+                        templateUrl: 'views/home/home.tpl.html'
                     }
                 }
             })
             ;
         })
-        .controller( 'SearchController', SearchController);
+        .controller( 'SearchController', SearchController)
+        .controller( 'HomeController', HomeController);
 
         function SearchController($scope, Restangular, $state) {
 
@@ -27,6 +32,9 @@
                     // Show error on screen
                 });
             };
+        }
+
+        function HomeController($scope, Restangular, $state) {
         }
 })();
 
