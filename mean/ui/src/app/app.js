@@ -28,6 +28,7 @@
         .constant('appVersion', '1.0.0')
         .run( function initApplication () {
 
+
         });
         /*        
         .run( function initApplication ($httpBackend) {

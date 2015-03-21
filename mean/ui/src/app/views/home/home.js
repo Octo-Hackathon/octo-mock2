@@ -7,9 +7,9 @@
             .state( 'home', {
                 url: '/',
                 views: {
-                    "main": {
+                    "header": {
                         controller: 'SearchController',
-                        templateUrl: 'views/home/home.tpl.html'
+                        templateUrl: 'views/header/header.tpl.html'
                     }
                 }
             })
