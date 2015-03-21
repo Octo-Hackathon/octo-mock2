@@ -8,7 +8,7 @@ class EqiDetailsController < ApplicationController
     EqiDetail.delete_all
     Rails.logger = Logger.new(STDOUT)
     #Reading the data from csv and converting into JSON objects
-     CSV.foreach("./vendor/assets/data/Eqidata_all_domains_2014March11.csv", headers: true) do |row|
+     ::CSV.foreach("./vendor/assets/data/Eqidata_all_domains_2014March11.csv", headers: true) do |row|
 
       eqiDetail = EqiDetail.new
       eqiDetail.stateCode = row['state']
