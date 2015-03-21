@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  stateCode: 
+  stateDescription: 
+  countyCode: 
+  countyDescription: 
+  domain: 
+  eqi: 
+
+two:
+  stateCode: 
+  stateDescription: 
+  countyCode: 
+  countyDescription: 
+  domain: 
+  eqi: 
