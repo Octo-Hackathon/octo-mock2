@@ -5,20 +5,22 @@ var coun = require('../models/county');
 module.exports.searchlist = function(req, res) {
 	var stateCounty = req.query.q;
 	//split county and code
-	var res = stateCounty.split(",");
+	var str = stateCounty.split(",");
 	console.log('stateCounty is :' + stateCounty);
-	var county = res[0];
-	var stateCd = res[1];
+	var county = str[0];
+	var stateCd = str[1];
 	
 	console.log('County is :' + county);
 	console.log('State is :' + stateCd),
-	coun.find({county_name: county, state: stateCd}, function(err, results) {
+	coun.findOne({county_name: county, state: stateCd}, 'stfips county_name state overall_result',function(err, results) {
 		// if there is an error retrieving, send the error. nothing after res.send(err) will execute
 		console.log('results is :' + results);
-            if (err)
-                res.send(err)
+		console.log(err);
+          //  if (err)
+                //res.send(err)
             // set results
 			res.json(results);
+			console.log(err);
 		});
 }
 
