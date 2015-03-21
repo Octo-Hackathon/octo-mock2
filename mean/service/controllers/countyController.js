@@ -42,8 +42,9 @@ module.exports.searchByCountyState = function(req, res) {
 	//split county and code
 	console.log('index : '+stateCounty.indexOf(','));
 	if(stateCounty.indexOf(',') == -1){
-		console.log('inside'); 
-		res.json({'error':'Invalid Search'});
+		console.log('inside'); 		
+		res.status(400).send({'error':'Invalid Search'});
+		return false;
 	}
 	var str = stateCounty.split(",");
 	console.log('stateCounty is :' + stateCounty);
@@ -65,6 +66,10 @@ module.exports.searchByCountyState = function(req, res) {
 		// if there is an error retrieving, send the error. nothing after res.send(err) will execute		
            if (err)
                 res.send(err)
+            if(results.length == 0){
+            	res.status(400).send({'error':'No Results in Details'});
+				return false;
+            }
             // set results
             for (var i = 0;i<results.length;i++){            	
             	
@@ -115,6 +120,11 @@ module.exports.searchByCountyState = function(req, res) {
 		// if there is an error retrieving, send the error. nothing after res.send(err) will execute		
            if (err)
                 res.send(err)
+
+            if(results.length == 0){
+            	res.status(400).send({'error':'No Results in Results'});
+				return false;
+            }
             // set results
             data.county_name = results[0].countyDescription;
             data.state = results[0].stateCode;
