@@ -9,7 +9,8 @@
 
 
   </head>
-  <body>
+  <body ng-class="$state.current.name==='home' ? 'home':''">
+
     <div ui-view="header"></div>
     <div ui-view="main"></div>
   </body>

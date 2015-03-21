@@ -20,14 +20,14 @@
             });             
         })
 
-        .controller( 'AppController', function AppController ($scope, $location,  appName, appVersion) {
+        .controller( 'AppController', function AppController ($scope, $state, $location,  appName, appVersion) {
             $scope.appName = appName;
             $scope.appVersion = appVersion;
         })
         .constant('appName', 'Octo | Know Your Neighborhood')
         .constant('appVersion', '1.0.0')
-        .run( function initApplication () {
-
+        .run( function initApplication ($rootScope, $state) {
+                $rootScope.$state = $state;
 
         });
         /*        
