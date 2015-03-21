@@ -7,8 +7,7 @@
             'templates-common',
             'ui.router',
             'ui.bootstrap',
-            'restangular',
-            'ngMockE2E'
+            'restangular'
         ])
 
         .config( function initRoutes ($urlRouterProvider, $stateProvider, RestangularProvider, $provide) {
@@ -27,7 +26,7 @@
         })
         .constant('appName', 'Octo | Know Your Neighborhood')
         .constant('appVersion', '1.0.0')
-        .run( function initApplication ($httpBackend) {
+        .run( function initApplication () {
 
         });
 })();
