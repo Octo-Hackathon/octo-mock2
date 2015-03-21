@@ -20,8 +20,12 @@ module.exports.searchlist = function(req, res) {
           //  if (err)
                 //res.send(err)
             // set results
-			res.json(results);
-			console.log(err);
+            var data = results.toJSON();
+            data.detail = {"air":{"nitro":"0.3","sulfur":"0.5","carbon":"0.4"},"water":{"drought":"0.3","mecury":"0.5","arsenic":"0.4"},"infra":{"highway":"0.3","streets":"0.5","fatalities":"0.4"},"socio":{"income":"0.3","unemployed":"0.5","crimes":"0.4"}};
+			console.log('results is :' + data);
+			res.json(data);			
+
+			//console.log(res);
 		});
 }
 
