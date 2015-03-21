@@ -29,14 +29,6 @@
         .constant('appVersion', '1.0.0')
         .run( function initApplication ($httpBackend) {
 
-            var myData = {"stfips":"1001","county_name":"Barbour County","state":"AL","overall_result":"0.0041379"};
-           
-            $httpBackend.whenGET(location.protocol + '//' + location.hostname + (location.port && ':' + location.port) + location.pathname + 'api/search?q=test').respond(function(method, url, data) {
-                return [200, myData, {}];
-            });
-        
-            $httpBackend.whenGET(/./).passThrough();
-
         });
 })();
 
