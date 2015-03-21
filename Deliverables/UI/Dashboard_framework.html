@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<title>Dashboard</title>
+
+<!-- Bootstrap -->
+<link href="css/bootstrap.min.css" rel="stylesheet">
+
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+<style>
+#headerContent {
+	height: 200px;
+	background: grey;
+}
+#tileContent {
+	height: 100%;
+	background: rgba(210,210,210,1.00);
+}
+</style>
+</head>
+<body>
+<div class="row" id="headerContent">
+<div class="col-sm-8 col-xs-offset-2">
+  <div class="col-sm-6">
+    <h2>County Name</h2>
+  </div>
+  <div class="col-sm-6" style="text-align:right">
+    <h2>Score</h2>
+    <label for="mainSearch">Search</label>
+    <input type="search" class="form-control" id="mainSearch" placeholder="County Name">
+    <br/>
+    <button type="button" class="btn btn-primary">Search</button>
+  </div>
+</div>
+</div>
+<div class="row" id="tileContent">
+<div class="col-sm-8 col-xs-offset-2">
+  <div class="col-sm-6">
+    <h2>Tile 1</h2>
+  </div>
+  <div class="col-sm-6" style="text-align:right">
+    <h2>Tile 2</h2>
+  </div>
+</div>
+</div>
+<div class="row" id="tileContent">
+<div class="col-sm-8 col-xs-offset-2">
+  <div class="col-sm-6">
+    <h2>Tile 3</h2>
+  </div>
+  <div class="col-sm-6" style="text-align:right">
+    <h2>Tile 4</h2>
+  </div>
+</div>
+</div>
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script> 
+<!-- Include all compiled plugins (below), or include individual files as needed --> 
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>
