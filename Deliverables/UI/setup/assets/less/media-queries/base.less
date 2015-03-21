@@ -87,7 +87,7 @@ Stylesheet: Base Stylesheet
 		box-shadow: 0px 0px 10px 0px @gray;
 		
 		input, .btn {
-			border:lighten(@gray, 10%) 1px solid;	
+			border:fade(@gray, 80%) 1px solid;	
 		}
 		
 		.btn-search {
@@ -126,6 +126,21 @@ Stylesheet: Base Stylesheet
 	
 	.content-panel {
 		margin-top:40px;	
+		
+		h2 {
+			font-size:2.2em;
+			font-weight:700;
+			span {
+				display:block;
+				font-weight:300;
+				color:@gray;
+				font-size:.8em;	
+			}
+			
+			border-left: 5px solid @orange;
+			padding-left: .9em;
+			
+		}
 	}
 	
 	.info-tile {
@@ -151,13 +166,15 @@ Stylesheet: Base Stylesheet
 		border-bottom:2px solid darken(@orange, 20%);
 	}
 	.score-county {
-		color:@white;
-		font-size:3.5em;	
-		border:5px solid @white;
+		color:@med-blue;
+		font-size:1.5em;	
+		border:5px solid @orange;
 		background-color:@orange;
+		background-color:lighten(@light-blue, 25%);
 		font-weight:400;
-		padding:.4em;
+		padding:.4em .8em;
 		border-radius:3em;
+		display:block;
 	}
 	.tile-footer {
 		background-color:lighten(@gray-light, 25%);

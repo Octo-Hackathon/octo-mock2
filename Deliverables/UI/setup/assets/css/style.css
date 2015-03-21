@@ -107,7 +107,7 @@ a:hover {
 }
 .identity-header input,
 .identity-header .btn {
-  border: #4f4f4f 1px solid;
+  border: rgba(53, 53, 53, 0.8) 1px solid;
 }
 .identity-header .btn-search {
   border-top-right-radius: 4px;
@@ -138,6 +138,18 @@ a:hover {
 .content-panel {
   margin-top: 40px;
 }
+.content-panel h2 {
+  font-size: 2.2em;
+  font-weight: 700;
+  border-left: 5px solid #ff9800;
+  padding-left: .9em;
+}
+.content-panel h2 span {
+  display: block;
+  font-weight: 300;
+  color: #353535;
+  font-size: .8em;
+}
 .info-tile {
   margin-bottom: 1.2em;
 }
@@ -159,13 +171,15 @@ a:hover {
   border-bottom: 2px solid #995b00;
 }
 .score-county {
-  color: #ffffff;
-  font-size: 3.5em;
-  border: 5px solid #ffffff;
+  color: #607d8b;
+  font-size: 1.5em;
+  border: 5px solid #ff9800;
   background-color: #ff9800;
+  background-color: #ffffff;
   font-weight: 400;
-  padding: .4em;
+  padding: .4em .8em;
   border-radius: 3em;
+  display: block;
 }
 .tile-footer {
   background-color: #f6f6f6;
