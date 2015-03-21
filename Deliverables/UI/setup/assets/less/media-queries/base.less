@@ -1,0 +1,75 @@
+/******************************************************************
+
+Stylesheet: Base Stylesheet
+
+******************************************************************/
+// Global values
+// --------------------------------------------------
+
+@white:                 #FFFFFF;
+@black:                 #000000;
+@orange:                #FF9800;	
+@light-blue:            #CFD8DC;	
+@med-blue:             	#607D8B;
+@gray-light:	        #B6B6B6;
+@gray-med:				#727272;
+@gray:					#353535;
+
+// --------------------------------------------------
+
+@font-face{font-family:'Roboto';font-style:normal;font-weight:300;src:local('Roboto Light'),local('Roboto-Light'),url(http://fonts.gstatic.com/s/roboto/v14/Hgo13k-tfSpn0qi1SFdUfT8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');}
+@font-face{font-family:'Roboto';font-style:normal;font-weight:400;src:local('Roboto Regular'),local('Roboto-Regular'),url(http://fonts.gstatic.com/s/roboto/v14/2UX7WLTfW3W8TclTUvlFyQ.woff) format('woff');}
+@font-face{font-family:'Roboto';font-style:normal;font-weight:500;src:local('Roboto Medium'),local('Roboto-Medium'),url(http://fonts.gstatic.com/s/roboto/v14/RxZJdnzeo3R5zSexge8UUT8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');}
+@font-face{font-family:'Roboto';font-style:normal;font-weight:700;src:local('Roboto Bold'),local('Roboto-Bold'),url(http://fonts.gstatic.com/s/roboto/v14/d-6IYplOFocCacKzxwXSOD8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');}
+@font-face{font-family:'Roboto';font-style:normal;font-weight:900;src:local('Roboto Black'),local('Roboto-Black'),url(http://fonts.gstatic.com/s/roboto/v14/mnpfi9pxYH-Go5UiibESIj8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');}
+
+	body {
+		background-color:@white;
+		color:@gray;
+		font-weight:200;
+		font-size:14px;
+		font-family:'Roboto',Arial,Helvetica,sans-serif;
+	}
+	
+	strong {
+		font-weight:900;	
+	}
+	
+	h1 {
+		font-size:2em;	
+		font-weight:900;
+	}
+	h2 {
+		font-size:1.8em;	
+		color:@med-blue;	
+	}
+	h3 {
+		font-size:1.6em;
+		font-weight:900;
+  		margin:.5em 0;	
+	}
+	h4 {
+		font-size:1.4em;	
+		line-height:1.6em;
+		font-size:1.3em;
+		color:@orange;	
+	}
+	h5 {
+		font-size:1.2em;	
+	}
+	p {
+		line-height:1.8em;	
+	}
+	a {
+		color:@med-blue;	
+	}
+	
+	a:hover {
+		color: darken(@med-blue, 20%);
+	}
+	
+	.btn {
+		border:none;
+		border-radius:0;
+		font-weight: 500;
+	}
