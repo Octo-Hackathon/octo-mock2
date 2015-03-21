@@ -56,7 +56,7 @@
         <div>
             <div class="col-sm-6 col-md-3">
                 <div class="info-tile">
-                    <h3 class="text-uppercase">People <span class="score pull-right">95</span></h3>
+                    <h3 class="text-uppercase">People <span class="score pull-right">{{countyData.detail.socio.overall | number : 1}}</span></h3>
                         <ul class="list-unstyled">
                             <li>
                                 <h6>Median Income - {{countyData.detail.socio.income | number : 1}}<h6>
@@ -87,7 +87,7 @@
             </div>
             <div class="col-sm-6 col-md-3">
                 <div class="info-tile">
-                    <h3 class="text-uppercase">Travel Safety <span class="score pull-right">95</span></h3>
+                    <h3 class="text-uppercase">Travel Safety <span class="score pull-right">{{countyData.detail.infra.overall | number : 1}}</span></h3>
                         <ul class="list-unstyled">
                             <li>
                                 <h6>Proportion of Highway - {{countyData.detail.infra.highway | number : 1}}<h6>
@@ -118,7 +118,7 @@
             </div>
             <div class="col-sm-6 col-md-3">
                 <div class="info-tile">
-                    <h3 class="text-uppercase">Air Quality <span class="score pull-right">95</span></h3>
+                    <h3 class="text-uppercase">Air Quality <span class="score pull-right">{{countyData.detail.air.overall | number : 1}}</span></h3>
                         <ul class="list-unstyled">
                             <li>
                                 <h6>Nitro Dioxide - {{countyData.detail.air.nitro | number : 1}}<h6>
@@ -149,7 +149,7 @@
             </div>
             <div class="col-sm-6 col-md-3">
                 <div class="info-tile">
-                    <h3 class="text-uppercase">Water Quality <span class="score pull-right">95</span></h3>
+                    <h3 class="text-uppercase">Water Quality <span class="score pull-right">{{countyData.detail.water.overall | number : 1}}</span></h3>
                         <ul class="list-unstyled">
                             <li>
                                 <h6>% of County drought - {{countyData.detail.water.drought | number : 1}}</h6>
