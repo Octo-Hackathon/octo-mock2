@@ -12,7 +12,7 @@ var app      = express();                               // create our app w/ exp
 
     mongoose.connect('mongodb://127.0.0.1/octo-mock2');     // connect to mongoDB database on modulus.io
 
-    app.use(express.static(__dirname + '/build'));                 // set the static files location /public/img will be /img for users
+    app.use(express.static(__dirname + '/ui/build'));                 // set the static files location /public/img will be /img for users
     app.use(morgan('dev'));                                         // log every request to the console
     app.use(bodyParser.urlencoded({'extended':'true'}));            // parse application/x-www-form-urlencoded
     app.use(bodyParser.json());                                     // parse application/json
@@ -21,7 +21,7 @@ var app      = express();                               // create our app w/ exp
 
 app.get('/', function (req, res) {
 	
-               res.sendFile(__dirname + '/build/index.html');
+               res.sendFile(__dirname + '/ui/build/index.html');
 });  
 
 
@@ -29,7 +29,7 @@ app.get('/', function (req, res) {
 //REST API
  
  app.get('/api/search', countyController.searchlist);
- app.get('/api/test', countyController.test);
+ app.get('/api/test', countyController.test); 
  
 
 exports.app = app;

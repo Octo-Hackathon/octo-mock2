@@ -5,10 +5,10 @@ var coun = require('../models/county');
 module.exports.searchlist = function(req, res) {
 	var stateCounty = req.query.q;
 	//split county and code
-	var res = stateCounty.split(",");
+	var splitTxt = stateCounty.split(",");
 	console.log('stateCounty is :' + stateCounty);
-	var county = res[0];
-	var stateCd = res[1];
+	var county = splitTxt[0];
+	var stateCd = splitTxt[1];
 	
 	console.log('County is :' + county);
 	console.log('State is :' + stateCd),
@@ -26,7 +26,7 @@ module.exports.searchlist = function(req, res) {
 module.exports.test = function(req, res) {
 	var stateCounty = req.query.q;
 	console.log('stateCounty is :' + stateCounty);
-	res.json({city: 'NEW  YORK', state: 'NY'});
+	res.json({  stfips: 51059,  county_name: 'Fairfax County',  state: 'VA',  overall_result: 2.196357 });
 }
 
 
