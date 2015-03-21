@@ -76,6 +76,11 @@ Stylesheet: Base Stylesheet
 		border:1px solid darken(@orange, 10%);	
 		color:@white;	
 	}
+	.btn-app-primary:hover {
+		background-color:darken(@orange, 5%);
+		border:1px solid darken(@orange, 10%);	
+		color:darken(@white, 10%);	
+	}
 	.identity-header {
 		background-color:fade(@gray, 80%);
 		color:@white;
@@ -101,14 +106,16 @@ Stylesheet: Base Stylesheet
 	
 	
 	.home {
-		background:@white url(../images/bg_home.jpg) no-repeat 50% 50% fixed; 
+		background:@white url(../images/bg_home.jpg) no-repeat 50% 50% fixed;
   		background-size: cover;	
 		
 		.content-panel {
 			margin-top:1.4em;
-			background-color:fade(@white, 80%);
+			background-color:@white;
 			padding-top:1.2em;
 			padding-bottom:1.2em;
+			color:@med-blue;
+			box-shadow: inset 0px 0px 10px 0px #ABABAB;
 		}
 		.info-tile{
 			background-color:@white;
