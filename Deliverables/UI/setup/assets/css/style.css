@@ -120,6 +120,18 @@ a:hover {
   background: #ffffff url(../images/bg_home.jpg) no-repeat 50% 50% fixed;
   background-size: cover;
 }
+.home .content-panel {
+  margin-top: 1.4em;
+  background-color: rgba(255, 255, 255, 0.8);
+  padding-top: 1.2em;
+  padding-bottom: 1.2em;
+}
+.home .info-tile {
+  background-color: #ffffff;
+}
+.info-tile h3 {
+  color: #607d8b;
+}
 /* import tablet */
 /******************************************************************
 
