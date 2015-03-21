@@ -90,6 +90,36 @@ a:hover {
   border-radius: 0;
   font-weight: 500;
 }
+.btn-app-primary {
+  background-color: #ff9800;
+  border: 1px solid #cc7a00;
+  color: #663d00;
+}
+.identity-header {
+  background-color: rgba(53, 53, 53, 0.8);
+  color: #ffffff;
+}
+.identity-header input,
+.identity-header .btn {
+  border: #4f4f4f 1px solid;
+}
+.identity-header .btn-search {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+}
+.app-title {
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+.tagline {
+  margin: 1em auto;
+  font-size: .9em;
+  font-weight: 400;
+}
+.home {
+  background: #ffffff url(../images/bg_home.jpg) no-repeat 50% 50% fixed;
+  background-size: cover;
+}
 /* import tablet */
 /******************************************************************
 
