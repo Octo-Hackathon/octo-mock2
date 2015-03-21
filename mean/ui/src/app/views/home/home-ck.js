@@ -1,1 +1,0 @@
-(function(){"use strict";function e(e,t,n){e.search=function(){t.one("api").customGET("search",{q:e.query}).then(function(t){n.transitionTo("results",{q:e.query})},function(){})}}angular.module("app").config(function(t){t.state("home",{url:"/",views:{header:{controller:"SearchController",templateUrl:"views/header/header.tpl.html"}}})}).controller("SearchController",e)})();
