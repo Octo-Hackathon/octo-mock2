@@ -1,12 +1,4 @@
-var app =  require('../server').app;
-var should = require('should');
-var supertest = require('supertest');
-
-describe('buyers',function(){
- 	
-	//it('should get list of all buyers', function(done) {
-	//	supertest(app)
-	//	.get('/api/opportunity/5502334980cf05852e210844')'use strict';
+'use strict';
 
 var should = require('should'),
 	request = require('supertest'),
@@ -41,4 +33,3 @@ describe('County Search test', function() {
 		done();
 	});
 });
-
