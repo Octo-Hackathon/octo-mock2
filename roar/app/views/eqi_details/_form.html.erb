@@ -1,0 +1,49 @@
+<%= form_for(@eqi_detail) do |f| %>
+  <% if @eqi_detail.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@eqi_detail.errors.count, "error") %> prohibited this eqi_detail from being saved:</h2>
+
+      <ul>
+      <% @eqi_detail.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :stateCode %><br>
+    <%= f.text_field :stateCode %>
+  </div>
+  <div class="field">
+    <%= f.label :stateDescription %><br>
+    <%= f.text_field :stateDescription %>
+  </div>
+  <div class="field">
+    <%= f.label :countyCode %><br>
+    <%= f.text_field :countyCode %>
+  </div>
+  <div class="field">
+    <%= f.label :countyDescription %><br>
+    <%= f.text_field :countyDescription %>
+  </div>
+  <div class="field">
+    <%= f.label :variableCode %><br>
+    <%= f.text_field :variableCode %>
+  </div>
+  <div class="field">
+    <%= f.label :variableDescription %><br>
+    <%= f.text_field :variableDescription %>
+  </div>
+  <div class="field">
+    <%= f.label :variableValue %><br>
+    <%= f.text_field :variableValue %>
+  </div>
+  <div class="field">
+    <%= f.label :domain %><br>
+    <%= f.text_field :domain %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

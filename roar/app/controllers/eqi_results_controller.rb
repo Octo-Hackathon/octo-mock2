@@ -17,6 +17,7 @@ class EqiResultsController < ApplicationController
       eqiResult.domain =  'Air'
       eqiResult.eqi =  row['air_EQI_22July2013']
       eqiResult.save
+
       eqiResult = EqiResult.new
       eqiResult.stateCode = row['state']
       eqiResult.countyCode =  row['stfips']
@@ -24,6 +25,7 @@ class EqiResultsController < ApplicationController
       eqiResult.domain =  'Water'
       eqiResult.eqi =  row['water_EQI_22July2013']
       eqiResult.save
+
       eqiResult = EqiResult.new
       eqiResult.stateCode = row['state']
       eqiResult.countyCode =  row['stfips']
@@ -31,6 +33,7 @@ class EqiResultsController < ApplicationController
       eqiResult.domain =  'Land'
       eqiResult.eqi =  row['land_EQI_22July2013']
       eqiResult.save
+
       eqiResult = EqiResult.new
       eqiResult.stateCode = row['state']
       eqiResult.countyCode =  row['stfips']
@@ -38,6 +41,7 @@ class EqiResultsController < ApplicationController
       eqiResult.domain =  'Sociodemographic'
       eqiResult.eqi =  row['sociod_EQI_22July2013']
       eqiResult.save
+
       eqiResult = EqiResult.new
       eqiResult.stateCode = row['state']
       eqiResult.countyCode =  row['stfips']
@@ -45,6 +49,7 @@ class EqiResultsController < ApplicationController
       eqiResult.domain =  'Built'
       eqiResult.eqi =  row['built_EQI_22July2013']
       eqiResult.save
+
       eqiResult = EqiResult.new
       eqiResult.stateCode = row['state']
       eqiResult.countyCode =  row['stfips']
@@ -52,6 +57,7 @@ class EqiResultsController < ApplicationController
       eqiResult.domain =  'Overall'
       eqiResult.eqi =  row['EQI_22July2013']
       eqiResult.save     
+      
      end
     result = Result.new("Successfully Executed")    
     render json: result

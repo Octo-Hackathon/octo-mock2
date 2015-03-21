@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Eqi Details</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Statecode</th>
+      <th>Statedescription</th>
+      <th>Countycode</th>
+      <th>Countydescription</th>
+      <th>Variablecode</th>
+      <th>Variabledescription</th>
+      <th>Variablevalue</th>
+      <th>Domain</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @eqi_details.each do |eqi_detail| %>
+      <tr>
+        <td><%= eqi_detail.stateCode %></td>
+        <td><%= eqi_detail.stateDescription %></td>
+        <td><%= eqi_detail.countyCode %></td>
+        <td><%= eqi_detail.countyDescription %></td>
+        <td><%= eqi_detail.variableCode %></td>
+        <td><%= eqi_detail.variableDescription %></td>
+        <td><%= eqi_detail.variableValue %></td>
+        <td><%= eqi_detail.domain %></td>
+        <td><%= link_to 'Show', eqi_detail %></td>
+        <td><%= link_to 'Edit', edit_eqi_detail_path(eqi_detail) %></td>
+        <td><%= link_to 'Destroy', eqi_detail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Eqi detail', new_eqi_detail_path %>

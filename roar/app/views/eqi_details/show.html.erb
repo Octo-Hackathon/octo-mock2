@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Statecode:</strong>
+  <%= @eqi_detail.stateCode %>
+</p>
+
+<p>
+  <strong>Statedescription:</strong>
+  <%= @eqi_detail.stateDescription %>
+</p>
+
+<p>
+  <strong>Countycode:</strong>
+  <%= @eqi_detail.countyCode %>
+</p>
+
+<p>
+  <strong>Countydescription:</strong>
+  <%= @eqi_detail.countyDescription %>
+</p>
+
+<p>
+  <strong>Variablecode:</strong>
+  <%= @eqi_detail.variableCode %>
+</p>
+
+<p>
+  <strong>Variabledescription:</strong>
+  <%= @eqi_detail.variableDescription %>
+</p>
+
+<p>
+  <strong>Variablevalue:</strong>
+  <%= @eqi_detail.variableValue %>
+</p>
+
+<p>
+  <strong>Domain:</strong>
+  <%= @eqi_detail.domain %>
+</p>
+
+<%= link_to 'Edit', edit_eqi_detail_path(@eqi_detail) %> |
+<%= link_to 'Back', eqi_details_path %>
