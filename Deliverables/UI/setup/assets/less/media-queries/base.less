@@ -84,6 +84,7 @@ Stylesheet: Base Stylesheet
 	.identity-header {
 		background-color:fade(@gray, 80%);
 		color:@white;
+		box-shadow: 0px 0px 10px 0px @gray;
 		
 		input, .btn {
 			border:lighten(@gray, 10%) 1px solid;	
@@ -115,7 +116,7 @@ Stylesheet: Base Stylesheet
 			padding-top:1.2em;
 			padding-bottom:1.2em;
 			color:@med-blue;
-			box-shadow: inset 0px 0px 10px 0px #ABABAB;
+			box-shadow: inset 0px 0px 10px 0px lighten(@gray, 40%);
 		}
 		.info-tile{
 			background-color:@white;

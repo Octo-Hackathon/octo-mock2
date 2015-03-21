@@ -103,6 +103,7 @@ a:hover {
 .identity-header {
   background-color: rgba(53, 53, 53, 0.8);
   color: #ffffff;
+  box-shadow: 0px 0px 10px 0px #353535;
 }
 .identity-header input,
 .identity-header .btn {
@@ -131,7 +132,7 @@ a:hover {
   padding-top: 1.2em;
   padding-bottom: 1.2em;
   color: #607d8b;
-  box-shadow: inset 0px 0px 10px 0px #ABABAB;
+  box-shadow: inset 0px 0px 10px 0px #9b9b9b;
 }
 .home .info-tile {
   background-color: #ffffff;
