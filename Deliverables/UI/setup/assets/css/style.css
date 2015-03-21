@@ -138,6 +138,9 @@ a:hover {
 .content-panel {
   margin-top: 40px;
 }
+.info-tile {
+  margin-bottom: 1.2em;
+}
 .info-tile h3 {
   color: #353535;
   font-weight: 300;
@@ -147,15 +150,13 @@ a:hover {
   color: #607d8b;
 }
 .score {
-  background-color: #cfd8dc;
-  color: #607d8b;
+  color: #ffffff;
   font-weight: 900;
-  display: inline-block;
-  padding: .7em;
-  border-radius: 1.5em;
-  margin-top: -1.1em;
-  font-size: .8em;
-  border: 2px solid #607d8b;
+  font-size: 1.3em;
+  background-color: #ff9800;
+  padding: .4em;
+  display: block;
+  border-bottom: 2px solid #995b00;
 }
 .score-county {
   color: #ffffff;
@@ -164,6 +165,14 @@ a:hover {
   background-color: #ff9800;
   font-weight: 400;
   padding: .4em;
+  border-radius: 3em;
+}
+.tile-footer {
+  background-color: #f6f6f6;
+  font-size: .9em;
+  font-weight: 300;
+  padding: .4em;
+  border-top: 2px solid #e9e9e9;
 }
 /* import tablet */
 /******************************************************************
