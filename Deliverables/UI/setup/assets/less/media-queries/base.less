@@ -160,21 +160,21 @@ Stylesheet: Base Stylesheet
 		color:@white;
 		font-weight:900;
 		font-size:1.3em;
-		background-color:@orange;
+		background-color:lighten(@gray, 20%);
 		padding:.4em;	
 		display:block;
-		border-bottom:2px solid darken(@orange, 20%);
+		border-bottom:2px solid darken(@gray, 5%);
 	}
 	.score-county {
-		color:@med-blue;
+		color:@white;
 		font-size:1.5em;	
-		border:5px solid @orange;
+		border:5px solid @med-blue;
 		background-color:@orange;
-		background-color:lighten(@light-blue, 25%);
 		font-weight:400;
 		padding:.4em .8em;
 		border-radius:3em;
 		display:block;
+		box-shadow: inset 0px 0px 0px 6px @white;
 	}
 	.tile-footer {
 		background-color:lighten(@gray-light, 25%);
