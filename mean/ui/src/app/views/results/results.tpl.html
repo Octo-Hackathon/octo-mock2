@@ -1,22 +1,3 @@
-<div class="container-fluid">
-  	<div class="row">
-    	<h1 class="page-header text-center">App Title</h1>
-        <div class="col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3">
-            <form>
-              <div class="input-group">
-                  <input type="text" class="form-control" placeholder="Search for... (e.g. Alexandria County,VA)"  ng-model="query">
-                  <span class="input-group-btn">
-                    <button class="btn btn-default" type="button" ng-click="search();"><span class="glyphicon glyphicon-search"></span></button>
-                  </span>
-              </div><!-- /input-group -->
-            </form>
-        </div>
-        <div class="col-xs-12">
-        	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur quis commodo dolor, ac pharetra nulla. Duis ut feugiat lacus, sit amet lacinia massa. Curabitur dignissim interdum ligula, ac vehicula erat sagittis sit amet. Vivamus venenatis est quis euismod euismod. Maecenas cursus turpis nec leo suscipit, et blandit dui tincidunt. Cras vel elit gravida, congue dui vel, interdum ipsum.</p>
-        </div>
-  	</div>
-</div>
-
 <div class="container">
   	<div class="row">
     	<div class="col-lg-12">
@@ -34,9 +15,9 @@
         	<div class="info-tile">
         		<h3 class="text-uppercase">Socio</h3>
                 	<ul class="list-unstyled">
-                    	<li>Median Income</li>
-                    	<li>% unemployed</li>
-                    	<li>Violent Crimes</li>
+                    	<li>Median Income - {{countyData.detail.socio.income}}</li>
+                    	<li>% unemployed - {{countyData.detail.socio.unemployed}}</li>
+                    	<li>Violent Crimes - {{countyData.detail.socio.crimes}}</li>
                     </ul>
             </div>
         </div>
@@ -44,9 +25,9 @@
         	<div class="info-tile">
         		<h3 class="text-uppercase">Infrastructure</h3>
                 	<ul class="list-unstyled">
-                    	<li>Proportion of Highway</li>
-                    	<li>Streets</li>
-                    	<li>Traffic Fatality</li>
+                    	<li>Proportion of Highway - {{countyData.detail.infra.highway}}</li>
+                    	<li>Streets - {{countyData.detail.infra.streets}}</li>
+                    	<li>Traffic Fatality - {{countyData.detail.infra.fatalities}}</li>
                     </ul>
             </div>
         </div>
@@ -54,9 +35,9 @@
         	<div class="info-tile">
         		<h3 class="text-uppercase">Air Quality</h3>
                 	<ul class="list-unstyled">
-                    	<li>Nitro Dioxide</li>
-                    	<li>Sulfur Dioxide</li>
-                    	<li>Carbon Monoxide</li>
+                    	<li>Nitro Dioxide  - {{countyData.detail.air.nitro}}</li>
+                    	<li>Sulfur Dioxide  - {{countyData.detail.air.sulfur}}</li>
+                    	<li>Carbon Monoxide - {{countyData.detail.air.carbon}}</li>
                     </ul>
             </div>
         </div>
@@ -64,9 +45,9 @@
         	<div class="info-tile">
         		<h3 class="text-uppercase">Water Quality</h3>
                 	<ul class="list-unstyled">
-                    	<li>% of County drought</li>
-                    	<li>Mecury</li>
-                    	<li>Arsenic</li>
+                    	<li>% of County drought - {{countyData.detail.water.drought}}</li>
+                    	<li>Mercury - {{countyData.detail.water.mecury}}</li>
+                    	<li>Arsenic - {{countyData.detail.water.arsenic}}</li>
                     </ul>
             </div>
         </div>

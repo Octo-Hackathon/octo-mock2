@@ -7,6 +7,10 @@
             .state( 'results', {
                 url: '/results?q',
                 views: {
+                    "header": {
+                        controller: 'SearchController',
+                        templateUrl: 'views/header/header.tpl.html'
+                    },
                     "main": {
                         controller: 'ResultsController',
                         templateUrl: 'views/results/results.tpl.html'
@@ -24,16 +28,6 @@
 
         function ResultsController($scope, Restangular, countyData, $state) {
             $scope.countyData = countyData;
-
-            $scope.search = function () {
-                Restangular.one('api').customGET('search',{'q':$scope.query})
-                .then(function(result) {
-                    $state.transitionTo('results', {'q':$scope.query});
-                }, function() {
-                    // Show error on screen
-                });
-            };
-
         }
 })();
 
