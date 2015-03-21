@@ -6,7 +6,7 @@ var app      = express();                               // create our app w/ exp
     var methodOverride = require('method-override'); // simulate DELETE and PUT (express4)
 
     // configuration =================
-	oppController = require('./service/controllers/countyController');
+	countyController = require('./service/controllers/countyController');
 
 //mongoose.connect('mongodb://localhost:27017/mean-marketplace');
 
@@ -29,6 +29,7 @@ app.get('/', function (req, res) {
 //REST API
  
  app.get('/api/search', countyController.searchlist);
+ app.get('/api/test', countyController.test);
  
 
 exports.app = app;

@@ -11,12 +11,7 @@
     "body-parser": "~1.5.2",
     "method-override": "~2.1.2"
   },
-  "devDependencies": {
-    "jasmine-core": "^2.2.0",
-    "karma-chrome-launcher": "^0.1.7",
-    "karma-firefox-launcher": "^0.1.4",
-    "karma-ie-launcher": "^0.1.5",
-    "karma-jasmine": "^0.3.5",
+  "devDependencies": {    
     "mocha": "^2.2.1",
     "should": "^5.2.0",
     "supertest": "^0.15.0"
