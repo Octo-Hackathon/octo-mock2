@@ -1,5 +1,6 @@
 class EqiDetail
   include Mongoid::Document
+  store_in collection: "eqidetails", database: "octo-mock2"
   field :stateCode, type: String
   field :stateDescription, type: String
   field :countyCode, type: String
