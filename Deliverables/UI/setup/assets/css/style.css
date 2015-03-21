@@ -135,6 +135,9 @@ a:hover {
   box-shadow: inset 0px 0px 10px 0px #9b9b9b;
   border-radius: 4px;
 }
+.content-panel {
+  margin-top: 40px;
+}
 .info-tile h3 {
   color: #353535;
   font-weight: 300;
@@ -156,9 +159,11 @@ a:hover {
 }
 .score-county {
   color: #ffffff;
-  font-size: 2.5em;
+  font-size: 3.5em;
   border: 5px solid #ffffff;
   background-color: #ff9800;
+  font-weight: 400;
+  padding: .4em;
 }
 /* import tablet */
 /******************************************************************
