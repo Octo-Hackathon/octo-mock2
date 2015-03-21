@@ -1,6 +1,6 @@
 var mongoose = require('mongoose');
 
-module.exports = mongoose.model('EqiResult',{
+module.exports = mongoose.model('eqiresult',{
                                 stateCode : String,
                                 stateDescription : String,
                                 countyCode : String,

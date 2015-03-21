@@ -28,7 +28,7 @@ app.get('/', function (req, res) {
 
 //REST API
  
- app.get('/api/search', countyController.searchlist);
+ app.get('/api/search', countyController.searchByCountyState);
  app.get('/api/test', countyController.test); 
  
 
