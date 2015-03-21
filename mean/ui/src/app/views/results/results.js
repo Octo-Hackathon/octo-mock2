@@ -22,9 +22,17 @@
         })
         .controller( 'ResultsController', ResultsController);
 
-        function ResultsController($scope, Restangular, countyData) {
+        function ResultsController($scope, Restangular, countyData, $state) {
             $scope.countyData = countyData;
-            console.log($scope.countyData);
+
+            $scope.search = function () {
+                Restangular.one('api').customGET('search',{'q':$scope.query})
+                .then(function(result) {
+                    $state.transitionTo('results', {'q':$scope.query});
+                }, function() {
+                    // Show error on screen
+                });
+            };
 
         }
 })();
