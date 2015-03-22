@@ -11,9 +11,9 @@ module.exports.calculateEqiPercentage = function(minVal, maxVal, value, isPositi
 }
 
 module.exports.calculateOtherPercentage = function(minVal, maxVal, value) {
-	console.log('Max Val :: '+maxVal);
-	console.log('Min Val :: '+minVal);
-	console.log('Val :: '+value);
+	//console.log('Max Val :: '+maxVal);
+	//console.log('Min Val :: '+minVal);
+	//console.log('Val :: '+value);
 	if(value >= 0)
 		return (value / maxVal) * 100;
 	else 
