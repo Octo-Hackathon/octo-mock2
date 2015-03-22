@@ -20,12 +20,12 @@ class HouseController < ApplicationController
   	occupancyNumber = result[1][1].to_i
   	vacancyNumber = result[1][2].to_i
   	ownerOccupancyNumber = result[1][4].to_i+result[1][5].to_i
-  	rentalOccupancyNumber = result[1][4].to_i
+  	rentalOccupancyNumber = result[1][6].to_i
 
-  	occupancy = Occupancy.new(occupancyNumber,(occupancyNumber * 100/total))
-  	vacancy = Vacancy.new(vacancyNumber,(vacancyNumber * 100/total))  
-  	ownerOccupancy = OwnerOccupancy.new(ownerOccupancyNumber,(ownerOccupancyNumber * 100/total))
-  	rentalOccupancy = RentalOccupancy.new(rentalOccupancyNumber,(rentalOccupancyNumber * 100/total))
+  	occupancy = Occupancy.new(occupancyNumber,(occupancyNumber.to_f * 100/total).round(2))
+  	vacancy = Vacancy.new(vacancyNumber,(vacancyNumber.to_f * 100/total).round(2))  
+  	ownerOccupancy = OwnerOccupancy.new(ownerOccupancyNumber,(ownerOccupancyNumber.to_f * 100/total).round(2))
+  	rentalOccupancy = RentalOccupancy.new(rentalOccupancyNumber,(rentalOccupancyNumber.to_f * 100/total).round(2))
   	housing = Housing.new(total,vacancy,occupancy,rentalOccupancy,ownerOccupancy)
   	#logger.info "fips code is :" << resut[1][1]
     #render json: response.body

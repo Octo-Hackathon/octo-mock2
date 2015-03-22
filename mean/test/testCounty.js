@@ -23,6 +23,7 @@ describe('County Search Test', function() {
 				result.state.should.match("VA");
 				//result.should.have.property('overall_result_perc');
 				result.overall_result_perc.should.be.within(0,100);
+				result.overall_result_rate.should.match("Good");
 
 				result.should.containDeep({detail:{air:{nitro:7.950482}}});
 				result.should.containDeep({detail:{water:{drought:1.616873}}});
@@ -34,6 +35,8 @@ describe('County Search Test', function() {
 				result.detail.water.overall_perc.should.be.within(0,100);
 				result.detail.infra.overall_perc.should.be.within(0,100);
 				result.detail.socio.overall_perc.should.be.within(0,100);
+				
+				result.detail.socio.overall_rate.should.match("Good");
 				
 				result.detail.air.nitro_perc.should.be.within(0,100);
 				result.detail.water.drought_perc.should.be.within(0,100);
