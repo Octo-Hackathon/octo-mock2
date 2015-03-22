@@ -14,24 +14,26 @@ class HouseController < ApplicationController
   	logger.info "state code is :" << state
   	logger.info "county code is :" << county
   	response = HTTParty.get('http://api.census.gov/data/2010/sf1?get=H0030001,H0030002,H0030003,H0040001,H0040002,H0040003,H0040004&for=county:'<<county<<'&in=state:'<<state<<'&key=a81b69c2d8637be2124661c1dfdddf4f7dd03adf')   
-  	result = eval(response.body)
+    logger.info "response code is :" << response.response.code
+    if(response.code == 200) then
+      result = eval(response.body)
 
-  	total = result[1][0].to_i
-  	occupancyNumber = result[1][1].to_i
-  	vacancyNumber = result[1][2].to_i
-  	ownerOccupancyNumber = result[1][4].to_i+result[1][5].to_i
-  	rentalOccupancyNumber = result[1][6].to_i
+      total = result[1][0].to_i
+      occupancyNumber = result[1][1].to_i
+      vacancyNumber = result[1][2].to_i
+      ownerOccupancyNumber = result[1][4].to_i+result[1][5].to_i
+      rentalOccupancyNumber = result[1][6].to_i
 
-  	occupancy = Occupancy.new(occupancyNumber,(occupancyNumber.to_f * 100/total).round(2))
-  	vacancy = Vacancy.new(vacancyNumber,(vacancyNumber.to_f * 100/total).round(2))  
-  	ownerOccupancy = OwnerOccupancy.new(ownerOccupancyNumber,(ownerOccupancyNumber.to_f * 100/total).round(2))
-  	rentalOccupancy = RentalOccupancy.new(rentalOccupancyNumber,(rentalOccupancyNumber.to_f * 100/total).round(2))
-  	housing = Housing.new(total,vacancy,occupancy,rentalOccupancy,ownerOccupancy)
-  	#logger.info "fips code is :" << resut[1][1]
-    #render json: response.body
-    render json: housing
+      occupancy = Occupancy.new(occupancyNumber,(occupancyNumber.to_f * 100/total).round(2))
+      vacancy = Vacancy.new(vacancyNumber,(vacancyNumber.to_f * 100/total).round(2))  
+      ownerOccupancy = OwnerOccupancy.new(ownerOccupancyNumber,(ownerOccupancyNumber.to_f * 100/total).round(2))
+      rentalOccupancy = RentalOccupancy.new(rentalOccupancyNumber,(rentalOccupancyNumber.to_f * 100/total).round(2))
+      housing = Housing.new(total,vacancy,occupancy,rentalOccupancy,ownerOccupancy)
+      render json: housing
+    else
+      render json: "{}"
+    end
   end
-
 end
 
 class Housing
