@@ -16,6 +16,7 @@
                         templateUrl: 'views/results/results.tpl.html'
                     }
                 },
+                data:{ pageTitle: 'Inflo | Know Your Neighborhood' },
                 resolve: {
                     countyData: function(Restangular, $stateParams) {
                         return Restangular.one('api').customGET('search',{'q':$stateParams.q});
@@ -56,6 +57,10 @@
                     }
                 }]
             ];
+            // pie chart
+            $scope.pieData = {
+                series: [20, 10, 30, 40]
+            };            
         }
 })();
 
