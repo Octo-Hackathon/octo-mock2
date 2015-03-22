@@ -121,6 +121,8 @@ Stylesheet: Base Stylesheet
 		}
 		.info-tile {
 			background-color:fade(@gray, 80%);
+			border-radius:25px;
+			border-radius:25px;
 			
 			h3 {
 				background-color:@orange;
@@ -129,6 +131,8 @@ Stylesheet: Base Stylesheet
 				padding-top:1.2em;
 				padding-bottom:1.2em;
 				margin:0;
+				border-top-left-radius:25px;
+				border-top-right-radius:25px;
 			}
 			img {
 				width:260px;
@@ -151,13 +155,16 @@ Stylesheet: Base Stylesheet
 			}
 			
 			border-left: 5px solid @orange;
-			padding-left: .9em;
+			padding-left: .5em;
 			
 		}
 	}
 	
 	.info-tile {
 		margin-bottom:1.2em;
+		border-top-left-radius:25px;
+		border-top-right-radius:25px;
+		padding-bottom:20px;
 		
 		h3 {
 			font-weight:300;
@@ -206,4 +213,8 @@ Stylesheet: Base Stylesheet
 		border-top:2px solid lighten(@gray-light, 20%);
 		border-bottom-left-radius:10px;
 		border-bottom-right-radius:10px;
+	}
+	
+	.progress-bar {
+		background-color:@med-blue;	
 	}
