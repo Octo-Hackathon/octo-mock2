@@ -37,6 +37,30 @@ module.exports.test = function(req, res) {
 	res.json({  stfips: 51059,  county_name: 'Fairfax County',  state: 'VA',  overall_result: 2.196357 });
 }
 
+module.exports.autoComplete = function(req, res) {
+      var stateCounty = req.query.q;
+      var regex = new RegExp(stateCounty);
+      console.log('stateCounty is :' + stateCounty);
+      
+         eqiRes.aggregate({$match: { countyDescription: regex }}, function (err, results){
+
+            if (err) throw err;
+
+            var counties = [];
+
+            for (var countyDescription in results) {
+
+                counties.push(results[countyDescription].countyDescription+','+results[countyDescription].stateCode);
+
+            }
+
+            var result = { results: counties }
+
+            res.json(result);
+
+          });
+}
+
 module.exports.searchByCountyState = function(req, res) {
 	var stateCounty = req.query.q;
 	//split county and code

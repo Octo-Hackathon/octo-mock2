@@ -30,6 +30,7 @@ app.get('/', function (req, res) {
  
  app.get('/api/search', countyController.searchByCountyState);
  app.get('/api/test', countyController.test); 
+ app.get('/api/autoComplete', countyController.autoComplete); 
  
 
 exports.app = app;
