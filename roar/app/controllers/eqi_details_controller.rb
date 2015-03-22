@@ -1,4 +1,5 @@
 class EqiDetailsController < ApplicationController
+  require 'csv'
   before_action :set_eqi_detail, only: [:show, :edit, :update, :destroy]
 
   # GET /migrations
