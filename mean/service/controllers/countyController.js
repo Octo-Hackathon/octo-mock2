@@ -96,13 +96,15 @@ module.exports.searchByCountyState = function(req, res) {
 				return false;
             }
                   var maxNitro,maxSulfur,maxCarbon,maxDrought,maxMercury,maxArsenic,maxHighway,maxStreets,maxFatalities,maxIncome,maxUnemployed,maxCrime;
+                  var minNitro,minSulfur,minCarbon,minDrought,minMercury,minArsenic,minHighway,minStreets,minFatalities,minIncome,minUnemployed,minCrime;
                   eqiDet.find({ variableCode: 'a_no2_mean_ln'}, function(err, results) {
                         var varCodes = [];
                         for (var varCodess in results) {
                             varCodes.push(results[varCodess].variableValue);
                         }
                         
-                        maxNitro = calcService.maximumValue(varCodes);     
+                        maxNitro = calcService.maximumValue(varCodes);  
+                        minNitro = calcService.minimumValue(varCodes);   
                         // console.log('maxNitro::'+maxNitro); 
                        setVarVals();                  
                   });
@@ -112,7 +114,8 @@ module.exports.searchByCountyState = function(req, res) {
                             varCodes.push(results[varCodess].variableValue);
                         }
                         
-                        maxSulfur = calcService.maximumValue(varCodes);     
+                        maxSulfur = calcService.maximumValue(varCodes);
+                        minSulfur = calcService.minimumValue(varCodes);     
                         // console.log('maxNitro::'+maxNitro); 
                        setVarVals();                  
                   });
@@ -122,7 +125,8 @@ module.exports.searchByCountyState = function(req, res) {
                             varCodes.push(results[varCodess].variableValue);
                         }
                         
-                        maxCarbon = calcService.maximumValue(varCodes);     
+                        maxCarbon = calcService.maximumValue(varCodes); 
+                        minCarbon = calcService.minimumValue(varCodes);    
                         // console.log('maxNitro::'+maxNitro); 
                        setVarVals();                  
                   });
@@ -133,6 +137,7 @@ module.exports.searchByCountyState = function(req, res) {
                         }
                         
                         maxDrought = calcService.maximumValue(varCodes);     
+                        minDrought = calcService.minimumValue(varCodes);
                         // console.log('maxNitro::'+maxNitro); 
                        setVarVals();                  
                   });
@@ -142,7 +147,8 @@ module.exports.searchByCountyState = function(req, res) {
                             varCodes.push(results[varCodess].variableValue);
                         }
                         
-                        maxMercury = calcService.maximumValue(varCodes);     
+                        maxMercury = calcService.maximumValue(varCodes); 
+                        minMercury = calcService.minimumValue(varCodes);    
                         // console.log('maxNitro::'+maxNitro); 
                        setVarVals();                  
                   });
@@ -153,6 +159,7 @@ module.exports.searchByCountyState = function(req, res) {
                         }
                         
                         maxArsenic = calcService.maximumValue(varCodes);     
+                        minArsenic = calcService.minimumValue(varCodes);
                         // console.log('maxNitro::'+maxNitro); 
                        setVarVals();                  
                   });
@@ -162,7 +169,8 @@ module.exports.searchByCountyState = function(req, res) {
                             varCodes.push(results[varCodess].variableValue);
                         }
                         
-                        maxHighway = calcService.maximumValue(varCodes);     
+                        maxHighway = calcService.maximumValue(varCodes);
+                        minHighway = calcService.minimumValue(varCodes);     
                         // console.log('maxNitro::'+maxNitro); 
                        setVarVals();                  
                   });
@@ -172,7 +180,8 @@ module.exports.searchByCountyState = function(req, res) {
                             varCodes.push(results[varCodess].variableValue);
                         }
                         
-                        maxStreets = calcService.maximumValue(varCodes);     
+                        maxStreets = calcService.maximumValue(varCodes); 
+                        minStreets = calcService.minimumValue(varCodes);    
                         // console.log('maxNitro::'+maxNitro); 
                        setVarVals();                  
                   });
@@ -182,7 +191,8 @@ module.exports.searchByCountyState = function(req, res) {
                             varCodes.push(results[varCodess].variableValue);
                         }
                         
-                        maxFatalities = calcService.maximumValue(varCodes);     
+                        maxFatalities = calcService.maximumValue(varCodes); 
+                        minFatalities = calcService.minimumValue(varCodes);    
                         // console.log('maxNitro::'+maxNitro); 
                        setVarVals();                  
                   });
@@ -192,7 +202,8 @@ module.exports.searchByCountyState = function(req, res) {
                             varCodes.push(results[varCodess].variableValue);
                         }
                         
-                        maxIncome = calcService.maximumValue(varCodes);     
+                        maxIncome = calcService.maximumValue(varCodes);    
+                        minIncome = calcService.minimumValue(varCodes); 
                         //console.log('maxNitro::'+maxNitro); 
                        setVarVals();                  
                   });
@@ -202,7 +213,8 @@ module.exports.searchByCountyState = function(req, res) {
                             varCodes.push(results[varCodess].variableValue);
                         }
                         
-                        maxUnemployed = calcService.maximumValue(varCodes);     
+                        maxUnemployed = calcService.maximumValue(varCodes);   
+                        minUnemployed = calcService.minimumValue(varCodes);  
                        // console.log('maxNitro::'+maxNitro); 
                        setVarVals();                  
                   });
@@ -212,7 +224,8 @@ module.exports.searchByCountyState = function(req, res) {
                             varCodes.push(results[varCodess].variableValue);
                         }
                         
-                        maxCrime = calcService.maximumValue(varCodes);     
+                        maxCrime = calcService.maximumValue(varCodes);   
+                        minCrime = calcService.minimumValue(varCodes);  
                        // console.log('maxNitro::'+maxNitro); 
                        setVarVals();                  
                   });
@@ -223,55 +236,55 @@ module.exports.searchByCountyState = function(req, res) {
                         && maxMercury != undefined && maxArsenic != undefined && maxHighway != undefined && maxStreets != undefined && maxFatalities != undefined 
                         && maxIncome != undefined && maxUnemployed != undefined && maxCrime != undefined)
                  {
-                        for (var i = 0;i<results.length;i++){                 
+                        for (var i = 0;i<results.length;i++){                  
                   
                   if(results[i].variableCode.toLowerCase() == 'a_no2_mean_ln' && results[i].domain.toLowerCase() == 'air'){ 
                         data.detail.air.nitro = results[i].variableValue;
-                        data.detail.air.nitro_perc = calcService.calculateOtherPercentage(maxNitro,results[i].variableValue);
+                        data.detail.air.nitro_perc = calcService.calculateOtherPercentage(minNitro,maxNitro,results[i].variableValue);
                   }
                   else if(results[i].variableCode.toLowerCase() == 'a_so2_mean_ln'  && results[i].domain.toLowerCase() == 'air'){
                         data.detail.air.sulfur = results[i].variableValue;
-                        data.detail.air.sulfur_perc = calcService.calculateOtherPercentage(maxSulfur,results[i].variableValue);
+                        data.detail.air.sulfur_perc = calcService.calculateOtherPercentage(minSulfur,maxSulfur,results[i].variableValue);
                   }
                   else if(results[i].variableCode.toLowerCase() == 'a_co_mean_ln'  && results[i].domain.toLowerCase() == 'air'){
                         data.detail.air.carbon = results[i].variableValue;
-                        data.detail.air.carbon_perc = calcService.calculateOtherPercentage(maxCarbon,results[i].variableValue);
+                        data.detail.air.carbon_perc = calcService.calculateOtherPercentage(minCarbon,maxCarbon,results[i].variableValue);
                   }
                   else if(results[i].variableCode.toLowerCase() == 'avgofd3_ave'  && results[i].domain.toLowerCase() == 'water'){
                         data.detail.water.drought = results[i].variableValue;
-                        data.detail.water.drought_perc = calcService.calculateOtherPercentage(maxDrought,results[i].variableValue);
+                        data.detail.water.drought_perc = calcService.calculateOtherPercentage(minDrought,maxDrought,results[i].variableValue);
                   }                 
                       else if(results[i].variableCode.toLowerCase() == 'w_hg_ln'  && results[i].domain.toLowerCase() == 'water'){
                         data.detail.water.mercury = results[i].variableValue;
-                        data.detail.water.mercury_perc = calcService.calculateOtherPercentage(maxMercury,results[i].variableValue);
+                        data.detail.water.mercury_perc = calcService.calculateOtherPercentage(minMercury,maxMercury,results[i].variableValue);
                   }
                   else if(results[i].variableCode.toLowerCase() == 'w_as_ln'  && results[i].domain.toLowerCase() == 'water'){
                         data.detail.water.arsenic = results[i].variableValue;
-                        data.detail.water.arsenic_perc = calcService.calculateOtherPercentage(maxArsenic,results[i].variableValue);
+                        data.detail.water.arsenic_perc = calcService.calculateOtherPercentage(minArsenic,maxArsenic,results[i].variableValue);
                   }
                   else if(results[i].variableCode.toLowerCase() == 'hwyprop'  && results[i].domain.toLowerCase() == 'built'){
                         data.detail.infra.highway = results[i].variableValue;
-                        data.detail.infra.highway_perc = calcService.calculateOtherPercentage(maxHighway,results[i].variableValue);
+                        data.detail.infra.highway_perc = calcService.calculateOtherPercentage(minHighway,maxHighway,results[i].variableValue);
                   }     
                   else if(results[i].variableCode.toLowerCase() == 'ryprop'  && results[i].domain.toLowerCase() == 'built'){
                         data.detail.infra.streets = results[i].variableValue;
-                        data.detail.infra.streets_perc = calcService.calculateOtherPercentage(maxStreets,results[i].variableValue);
+                        data.detail.infra.streets_perc = calcService.calculateOtherPercentage(minStreets,maxStreets,results[i].variableValue);
                   }
                   else if(results[i].variableCode.toLowerCase() == 'fatal_rate_log'  && results[i].domain.toLowerCase() == 'built'){
                         data.detail.infra.fatalities = results[i].variableValue;
-                        data.detail.infra.fatalities_perc = calcService.calculateOtherPercentage(maxFatalities,results[i].variableValue);
+                        data.detail.infra.fatalities_perc = calcService.calculateOtherPercentage(minFatalities,maxFatalities,results[i].variableValue);
                   }
                   else if(results[i].variableCode.toLowerCase() == 'med_hh_inc'  && results[i].domain.toLowerCase() == 'sociodemographic'){
                         data.detail.socio.income = results[i].variableValue;
-                        data.detail.socio.income_perc = calcService.calculateOtherPercentage(maxIncome,results[i].variableValue);
+                        data.detail.socio.income_perc = calcService.calculateOtherPercentage(minIncome,maxIncome,results[i].variableValue);
                   }     
                   else if(results[i].variableCode.toLowerCase() == 'pct_unemp'  && results[i].domain.toLowerCase() == 'sociodemographic'){
                         data.detail.socio.unemployed = results[i].variableValue;
-                        data.detail.socio.unemployed_perc = calcService.calculateOtherPercentage(maxUnemployed,results[i].variableValue);
+                        data.detail.socio.unemployed_perc = calcService.calculateOtherPercentage(minUnemployed,maxUnemployed,results[i].variableValue);
                   }
                   else if(results[i].variableCode.toLowerCase() == 'violent_rate_log'  && results[i].domain.toLowerCase() == 'sociodemographic'){
                         data.detail.socio.crimes = results[i].variableValue;
-                        data.detail.socio.crimes_perc = calcService.calculateOtherPercentage(maxCrime,results[i].variableValue);
+                        data.detail.socio.crimes_perc = calcService.calculateOtherPercentage(minCrime,maxCrime,results[i].variableValue);
                   }
                         
                   }                 
