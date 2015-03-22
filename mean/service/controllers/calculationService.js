@@ -32,3 +32,14 @@ module.exports.maximumValue = function(array) {
 	return Math.max.apply(null, array);
 	
 }
+
+module.exports.rating = function(percent) {
+
+	if(percent > 0 && percent <= 40)
+		return 'Poor';
+	else if(percent > 40 && percent <= 80)
+		return 'Average';
+	else(percent > 80)
+		return 'Good';
+	
+}
