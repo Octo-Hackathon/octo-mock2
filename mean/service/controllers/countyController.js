@@ -288,12 +288,7 @@ module.exports.searchByCountyState = function(req, res) {
                   }
                         
                   }                 
-            //data = results.toJSON();
-            //data.detail = {"air":{"nitro":"0.3","sulfur":"0.5","carbon":"0.4"},"water":{"drought":"0.3","mecury":"0.5","arsenic":"0.4"},"infra":{"highway":"0.3","streets":"0.5","fatalities":"0.4"},"socio":{"income":"0.3","unemployed":"0.5","crimes":"0.4"}};
-                  //console.log('Data  after detail is :' + data);
-                  
-
-                  
+                              
 
                   eqiRes.find({countyDescription: county, stateCode: stateCd}, function(err, results) {
                   //console.log('Results result '+results);
@@ -355,16 +350,8 @@ module.exports.searchByCountyState = function(req, res) {
                         minOverall = calcService.minimumValue(eqis);
                         maxOverall = calcService.maximumValue(eqis);       
                         setEqi();                 
-                  });
-                  
-
-                  // eqiRes.findOne({countyDescription: county, stateCode: stateCd, domain: 'Air'}).sort('eqi', -1).run( function(err, doc) {
-                  //       maxAir = doc.eqi;
-                       
-                  // });
-                  // eqiRes.findOne({countyDescription: county, stateCode: stateCd, domain: 'Air'}).sort('eqi', 1).run( function(error, docs) {
-                  //        minAir = docs.eqi;
-                  // });                  
+                  });                  
+                 
                   
 
                   // set results
@@ -386,35 +373,44 @@ module.exports.searchByCountyState = function(req, res) {
 
 
                               for (var i = 0;i<results.length;i++){                 
-                                    //data.overall_result = results[0].
+                                    var percent = 0; var rate;
                                     if(results[i].domain.toLowerCase() == 'overall'){
                                           data.overall_result = results[i].eqi;
-                                          data.overall_result_perc = calcService.calculateEqiPercentage(minOverall,maxOverall,results[i].eqi,true);
-                                          //console.log('Overall '+results[i].eqi);
-                                          //console.log('Overall Percentage '+calcService.calculateEqiPercentage(minOverall,maxOverall,results[i].eqi,true)); 
+                                          percent = calcService.calculateEqiPercentage(minOverall,maxOverall,results[i].eqi,true);
+                                          data.overall_result_perc = percent;                                          
+                                          data.overall_result_rate = calcService.rating(percent);
+                                          
                                     }
                                     else if(results[i].domain.toLowerCase() == 'air'){          
                                           
                                           data.detail.air.overall = results[i].eqi;
-                                          data.detail.air.overall_perc = calcService.calculateEqiPercentage(minAir,maxAir,results[i].eqi,true);
+                                          percent = calcService.calculateEqiPercentage(minAir,maxAir,results[i].eqi,true);
+                                          data.detail.air.overall_perc  = percent;                                          
+                                          data.detail.air.overall_rate  = calcService.rating(percent);
 
                                     }
                                     else if(results[i].domain.toLowerCase() == 'water'){                    
                                           
                                           data.detail.water.overall = results[i].eqi;
-                                          data.detail.water.overall_perc = calcService.calculateEqiPercentage(minWater,maxWater,results[i].eqi,true);
+                                          percent = calcService.calculateEqiPercentage(minWater,maxWater,results[i].eqi,true);
+                                          data.detail.water.overall_perc = percent;                                          
+                                          data.detail.water.overall_rate = calcService.rating(percent);
 
                                     }
                                     else if(results[i].domain.toLowerCase() == 'built'){                    
                                           
                                           data.detail.infra.overall = results[i].eqi;
-                                          data.detail.infra.overall_perc = calcService.calculateEqiPercentage(minBuilt,maxBuilt,results[i].eqi,true);
+                                          percent = calcService.calculateEqiPercentage(minBuilt,maxBuilt,results[i].eqi,true);
+                                          data.detail.infra.overall_perc = percent;                                          
+                                          data.detail.infra.overall_rate = calcService.rating(percent);
 
                                     }
                                     else if(results[i].domain.toLowerCase() == 'sociodemographic'){                     
                                           
                                           data.detail.socio.overall = results[i].eqi;
-                                          data.detail.socio.overall_perc = calcService.calculateEqiPercentage(minSocio,maxSocio,results[i].eqi,true);
+                                          percent = calcService.calculateEqiPercentage(minSocio,maxSocio,results[i].eqi,true);
+                                          data.detail.socio.overall_perc = percent;                                          
+                                          data.detail.socio.overall_rate = calcService.rating(percent);
                                     }                 
                                       
                               } 
@@ -422,8 +418,7 @@ module.exports.searchByCountyState = function(req, res) {
                               res.json(data);
                         }
                             
-                  }           
-                  
+                  }              
                                           
                         
                   });
