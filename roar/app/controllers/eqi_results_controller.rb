@@ -134,9 +134,3 @@ class EqiResultsController < ApplicationController
       params.require(:eqi_result).permit(:stateCode, :stateDescription, :countyCode, :countyDescription, :domain, :eqi)
     end
 end
-
-class Result
-   def initialize(message)
-      @message=message
-   end
-end
