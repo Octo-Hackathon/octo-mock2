@@ -13,38 +13,40 @@ class PopulationController < ApplicationController
   	logger.info "state code is :" << state
   	logger.info "county code is :" << county
   	response = HTTParty.get('http://api.census.gov/data/2010/sf1?get=P0010001,P0120002,P0030002,P0030003,P0030005,P0030004,P0030006,P0030008,P0030007&for=county:'<<county<<'&in=state:'<<state<<'&key=a81b69c2d8637be2124661c1dfdddf4f7dd03adf')   
-  	result = eval(response.body)
+    if(response.code == 200) then
+    	result = eval(response.body)
 
-  	total = result[1][0].to_i
-  	maleNumber = result[1][1].to_i
-  	femaleNumber = total - maleNumber
-  	whiteNumber = result[1][2].to_i
-  	blackNumber = result[1][3].to_i
-  	asianNumber = result[1][4].to_i
-  	americanIndianAlaskaNativeNumber = result[1][5].to_i
-  	nativeHawaiianNumber = result[1][6].to_i
-  	twoOrMoreNumber = result[1][7].to_i
-  	otherRaceNumber = result[1][8].to_i
+    	total = result[1][0].to_i
+    	maleNumber = result[1][1].to_i
+    	femaleNumber = total - maleNumber
+    	whiteNumber = result[1][2].to_i
+    	blackNumber = result[1][3].to_i
+    	asianNumber = result[1][4].to_i
+    	americanIndianAlaskaNativeNumber = result[1][5].to_i
+    	nativeHawaiianNumber = result[1][6].to_i
+    	twoOrMoreNumber = result[1][7].to_i
+    	otherRaceNumber = result[1][8].to_i
 
-  	male = Male.new(maleNumber,(maleNumber.to_f * 100/total).round(2))
-  	female = Female.new(femaleNumber,(femaleNumber.to_f * 100/total).round(2))
-  	sex = Sex.new(male,female)
+    	male = Male.new(maleNumber,(maleNumber.to_f * 100/total).round(2))
+    	female = Female.new(femaleNumber,(femaleNumber.to_f * 100/total).round(2))
+    	sex = Sex.new(male,female)
 
-  	white = White.new(whiteNumber,(whiteNumber.to_f * 100/total).round(2))
-  	black = Black.new(blackNumber,(blackNumber.to_f * 100/total).round(2))
-  	asian = Asian.new(asianNumber,(asianNumber.to_f * 100/total).round(2))
-  	americanIndianAlaskaNative = AmericanIndianAlaskaNative.new(americanIndianAlaskaNativeNumber,(americanIndianAlaskaNativeNumber.to_f * 100/total).round(2))
-  	nativeHawaiian = NativeHawaiian.new(nativeHawaiianNumber,(nativeHawaiianNumber.to_f * 100/total).round(2))
-  	twoOrMore = OtherRace.new(twoOrMoreNumber,(twoOrMoreNumber.to_f * 100/total).round(2))
-  	otherRace = OtherRace.new(otherRaceNumber,(otherRaceNumber.to_f * 100/total).round(2))
+    	white = White.new(whiteNumber,(whiteNumber.to_f * 100/total).round(2))
+    	black = Black.new(blackNumber,(blackNumber.to_f * 100/total).round(2))
+    	asian = Asian.new(asianNumber,(asianNumber.to_f * 100/total).round(2))
+    	americanIndianAlaskaNative = AmericanIndianAlaskaNative.new(americanIndianAlaskaNativeNumber,(americanIndianAlaskaNativeNumber.to_f * 100/total).round(2))
+    	nativeHawaiian = NativeHawaiian.new(nativeHawaiianNumber,(nativeHawaiianNumber.to_f * 100/total).round(2))
+    	twoOrMore = OtherRace.new(twoOrMoreNumber,(twoOrMoreNumber.to_f * 100/total).round(2))
+    	otherRace = OtherRace.new(otherRaceNumber,(otherRaceNumber.to_f * 100/total).round(2))
 
-  	race = Race.new(white, black, americanIndianAlaskaNative, asian, nativeHawaiian, otherRace, twoOrMore)
+    	race = Race.new(white, black, americanIndianAlaskaNative, asian, nativeHawaiian, otherRace, twoOrMore)
 
-  	population = Population.new(total, race, sex)
-
-  	#logger.info "fips code is :" << resut[1][1]
-    #render json: response.body
-    render json: population
+    	population = Population.new(total, race, sex)
+      
+      render json: population
+    else
+      render json: "{}"
+    end
   end
 end
 class Population

@@ -280,7 +280,7 @@ module.exports.searchByCountyState = function(req, res) {
                   }     
                   else if(results[i].variableCode.toLowerCase() == 'pct_unemp'  && results[i].domain.toLowerCase() == 'sociodemographic'){
                         data.detail.socio.unemployed = results[i].variableValue;
-                        data.detail.socio.unemployed_perc = calcService.calculateOtherPercentage(minUnemployed,maxUnemployed,results[i].variableValue);
+                        data.detail.socio.unemployed_perc = calcService.calculateUnemploymentPercentage(minUnemployed,maxUnemployed,results[i].variableValue);
                   }
                   else if(results[i].variableCode.toLowerCase() == 'violent_rate_log'  && results[i].domain.toLowerCase() == 'sociodemographic'){
                         data.detail.socio.crimes = results[i].variableValue;
