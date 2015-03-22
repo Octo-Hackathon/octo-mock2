@@ -9,17 +9,21 @@
             'ui.bootstrap',
             'restangular',
             'angular.filter',
-            'angular-chartist'
+            'angular-chartist',
+            'angular-ladda'
         ])
 
-        .config( function initRoutes ($urlRouterProvider, $stateProvider, RestangularProvider, $provide) {
+        .config( function initRoutes ($urlRouterProvider, $stateProvider, RestangularProvider, $provide, laddaProvider) {
             $urlRouterProvider.otherwise( '/' );
              RestangularProvider.setBaseUrl(location.protocol + '//' + location.hostname + (location.port && ':' + location.port) + location.pathname);
             $provide.decorator('$uiViewScroll', function ($delegate, $stateParams, $location, $document) {
                 return function (uiViewElement) {
                     $document.scrollTop(0, 0);
                 };
-            });             
+            });
+            laddaProvider.setOption({ 
+              style: 'zoom-in'
+            });            
         })
 
         .controller( 'AppController', function AppController ($scope, $state, $location,  appName, appVersion) {
