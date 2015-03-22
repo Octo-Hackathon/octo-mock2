@@ -118,21 +118,29 @@ Stylesheet: Base Stylesheet
 			color:@med-blue;
 			box-shadow: inset 0px 0px 10px 0px lighten(@gray, 40%);
 			border-radius: 4px;
+			
+			p {
+				margin-top:.8em;	
+			}
 		}
 		.info-tile {
-			background-color:fade(@gray, 80%);
-			border-radius:25px;
-			border-radius:25px;
 			
 			h3 {
-				background-color:@orange;
 				font-weight:700;
-				color:@white;
+				color:@gray;
 				padding-top:1.2em;
-				padding-bottom:1.2em;
+				padding-bottom:.5em;
 				margin:0;
-				border-top-left-radius:25px;
-				border-top-right-radius:25px;
+				margin-bottom:.4em;
+				border-bottom-color:@gray-light;
+				background-color:transparent;
+				
+				span {
+					font-size:1.5em;
+					color:@orange;
+					display:inline-block;
+					margin-right:.4em;
+				}
 			}
 			img {
 				width:260px;

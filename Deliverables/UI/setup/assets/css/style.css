@@ -135,19 +135,24 @@ a:hover {
   box-shadow: inset 0px 0px 10px 0px #9b9b9b;
   border-radius: 4px;
 }
-.home .info-tile {
-  background-color: rgba(53, 53, 53, 0.8);
-  border-radius: 25px;
+.home .content-panel p {
+  margin-top: .8em;
 }
 .home .info-tile h3 {
-  background-color: #ff9800;
   font-weight: 700;
-  color: #ffffff;
+  color: #353535;
   padding-top: 1.2em;
-  padding-bottom: 1.2em;
+  padding-bottom: .5em;
   margin: 0;
-  border-top-left-radius: 25px;
-  border-top-right-radius: 25px;
+  margin-bottom: .4em;
+  border-bottom-color: #b6b6b6;
+  background-color: transparent;
+}
+.home .info-tile h3 span {
+  font-size: 1.5em;
+  color: #ff9800;
+  display: inline-block;
+  margin-right: .4em;
 }
 .home .info-tile img {
   width: 260px;
