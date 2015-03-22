@@ -8,7 +8,8 @@
             'ui.router',
             'ui.bootstrap',
             'restangular',
-            'angular.filter'
+            'angular.filter',
+            'angular-chartist'
         ])
 
         .config( function initRoutes ($urlRouterProvider, $stateProvider, RestangularProvider, $provide) {
