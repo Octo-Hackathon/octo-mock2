@@ -22,15 +22,33 @@
         .controller( 'SearchController', SearchController)
         .controller( 'HomeController', HomeController);
 
-        function SearchController($scope, Restangular, $state) {
-
+        function SearchController($scope, Restangular, $state, $filter) {
+            $scope.hasError = 0;
             $scope.search = function () {
                 Restangular.one('api').customGET('search',{'q':$scope.query})
                 .then(function(result) {
+                    $scope.hasError = 0;
                     $state.transitionTo('results', {'q':$scope.query});
                 }, function() {
-                    // Show error on screen
+                    $scope.hasError = 1;
                 });
+            };
+
+            $scope.getLocation = function(val) {
+                $scope.hasError = 0;
+                return Restangular.one('api').customGET('autoComplete',{'q':val})
+                .then(function(result) {
+                    result.results = $filter('unique')(result.results);
+                    return result.results.map(function(item){
+                        return item;
+                    });
+
+                }, function() {
+                    
+                });
+            };     
+            $scope.onSelect = function ($item, $model, $label) {
+                // Auto search on click
             };
         }
 

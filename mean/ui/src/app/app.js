@@ -7,7 +7,8 @@
             'templates-common',
             'ui.router',
             'ui.bootstrap',
-            'restangular'
+            'restangular',
+            'angular.filter'
         ])
 
         .config( function initRoutes ($urlRouterProvider, $stateProvider, RestangularProvider, $provide) {

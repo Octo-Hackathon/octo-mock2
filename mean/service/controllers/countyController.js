@@ -39,7 +39,7 @@ module.exports.test = function(req, res) {
 
 module.exports.autoComplete = function(req, res) {
       var stateCounty = req.query.q;
-      var regex = new RegExp(stateCounty);
+      var regex = new RegExp(stateCounty,'i');
       console.log('stateCounty is :' + stateCounty);
       
          eqiRes.aggregate({$match: { countyDescription: regex }}, function (err, results){
