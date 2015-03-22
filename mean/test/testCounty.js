@@ -22,14 +22,14 @@ describe('County Search Test', function() {
 				var result = res.body;				
 				result.state.should.match("VA");
 				//result.should.have.property('overall_result_perc');
-				//result.overall_result_perc.should.be.within(0,100);
+				result.overall_result_perc.should.be.within(0,100);
 
 				result.should.containDeep({detail:{air:{nitro:7.950482}}});
 				result.should.containDeep({detail:{water:{drought:1.616873}}});
 				result.should.containDeep({detail:{infra:{highway:0.0483773}}});
 				result.should.containDeep({detail:{socio:{income:81050}}});
 				
-				/*result.should.containDeep({detail:{air:{overall_perc:}}});
+				//result.should.containDeep({detail:{air:{overall_perc:}}});
 				result.detail.air.overall_perc.should.be.within(0,100);
 				result.detail.water.overall_perc.should.be.within(0,100);
 				result.detail.infra.overall_perc.should.be.within(0,100);
@@ -39,7 +39,7 @@ describe('County Search Test', function() {
 				result.detail.water.drought_perc.should.be.within(0,100);
 				result.detail.infra.highway_perc.should.be.within(0,100);
 				result.detail.socio.income_perc.should.be.within(0,100);				
-				*/
+			
 				done();
 			});
 	});
