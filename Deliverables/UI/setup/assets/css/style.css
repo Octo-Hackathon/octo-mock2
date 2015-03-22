@@ -227,6 +227,13 @@ a:hover {
 .progress-bar {
   background-color: #607d8b;
 }
+.progress {
+  margin-bottom: .1em;
+}
+.desc {
+  margin-bottom: .4em;
+  font-size: 70%;
+}
 /* import tablet */
 /******************************************************************
 
