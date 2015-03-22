@@ -169,21 +169,22 @@ a:hover {
   margin-bottom: 1.2em;
 }
 .info-tile h3 {
-  color: #353535;
   font-weight: 300;
   font-size: 1.3em;
+  color: #ffffff;
+  background-color: #686868;
+  padding: .4em;
+  display: block;
+  border-bottom: 2px solid #282828;
 }
 .info-tile h6 {
   color: #607d8b;
 }
 .score {
-  color: #ffffff;
+  color: #353535;
   font-weight: 900;
-  font-size: 1.3em;
-  background-color: #686868;
-  padding: .4em;
+  font-size: .9em;
   display: block;
-  border-bottom: 2px solid #282828;
 }
 .score-county {
   color: #ffffff;

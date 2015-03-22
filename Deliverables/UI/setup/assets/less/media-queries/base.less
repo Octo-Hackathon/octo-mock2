@@ -160,9 +160,13 @@ Stylesheet: Base Stylesheet
 		margin-bottom:1.2em;
 		
 		h3 {
-			color:@gray;
 			font-weight:300;
 			font-size:1.3em;
+			color:@white;
+			background-color:lighten(@gray, 20%);
+			padding:.4em;	
+			display:block;
+			border-bottom:2px solid darken(@gray, 5%);
 		}
 		h6 {
 			color:@med-blue;	
@@ -170,13 +174,10 @@ Stylesheet: Base Stylesheet
 	}
 	
 	.score {
-		color:@white;
+		color:@gray;
 		font-weight:900;
-		font-size:1.3em;
-		background-color:lighten(@gray, 20%);
-		padding:.4em;	
+		font-size:.9em;	
 		display:block;
-		border-bottom:2px solid darken(@gray, 5%);
 	}
 	.score-county {
 		color:@white;
