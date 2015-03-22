@@ -67,7 +67,8 @@ module.exports = {
       'vendor/angular-ui-utils/modules/route/route.js',
       'vendor/restangular/dist/restangular.min.js',
       'vendor/lodash/dist/lodash.min.js',
-      'vendor/angular-mocks/angular-mocks.js'
+      'vendor/angular-mocks/angular-mocks.js',
+      'vendor/angular-filter/dist/angular-filter.min.js'
     ],
     css: [
        'vendor/font-awesome/css/font-awesome.min.css'
