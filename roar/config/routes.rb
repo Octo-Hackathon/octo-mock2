@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'migration2', to: 'eqi_details#migrate', path: '/admin/migrate/EQIDetails'
   get 'zip', to: 'zip#show', path: '/admin/getZipInformation/:id(.:json)'
   get 'house', to: 'house#show', path: '/admin/getHousingInfo/:id'
+  get 'house', to: 'population#show', path: '/admin/getPopulationInfo/:id'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
