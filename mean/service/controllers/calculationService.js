@@ -11,13 +11,20 @@ module.exports.calculateEqiPercentage = function(minVal, maxVal, value, isPositi
 }
 
 module.exports.calculateOtherPercentage = function(minVal, maxVal, value) {
-	//console.log('Max Val :: '+maxVal);
-	//console.log('Min Val :: '+minVal);
-	//console.log('Val :: '+value);
+	
 	if(value >= 0)
 		return (value / maxVal) * 100;
 	else 
 		return (value / minVal) * 100;	
+	
+}
+
+module.exports.calculateUnemploymentPercentage = function(minVal, maxVal, value) {
+	
+	if(value >= 0)
+		return 100-((value / maxVal) * 100);
+	else 
+		return 100-((value / minVal) * 100);	
 	
 }
 
