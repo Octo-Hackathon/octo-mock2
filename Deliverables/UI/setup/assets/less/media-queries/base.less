@@ -167,6 +167,8 @@ Stylesheet: Base Stylesheet
 			padding:.4em;	
 			display:block;
 			border-bottom:2px solid darken(@gray, 5%);
+			border-top-left-radius:10px;
+			border-top-right-radius:10px;
 		}
 		h6 {
 			color:@med-blue;	
@@ -180,7 +182,7 @@ Stylesheet: Base Stylesheet
 		display:block;
 	}
 	.score-county {
-		color:@gray;
+		color:@gray-light;
 		font-size:1.5em;	
 		font-weight:400;
 		display:block;
@@ -188,9 +190,12 @@ Stylesheet: Base Stylesheet
 		margin-top:.9em;
 		height:52px;
 		line-height:50px;
+		border-radius:25px;
 		
 		img {
 			margin-right:.4em;
+			border-top-left-radius:25px;
+			border-bottom-left-radius:25px;
 		}
 	}
 	.tile-footer {
@@ -199,4 +204,6 @@ Stylesheet: Base Stylesheet
 		font-weight:300;
 		padding:.4em;
 		border-top:2px solid lighten(@gray-light, 20%);
+		border-bottom-left-radius:10px;
+		border-bottom-right-radius:10px;
 	}
