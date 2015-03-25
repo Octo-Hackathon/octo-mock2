@@ -207,9 +207,3 @@ class EqiDetailsController < ApplicationController
       params.require(:eqi_detail).permit(:stateCode, :stateDescription, :countyCode, :countyDescription, :variableCode, :variableDescription, :variableValue, :domain)
     end
 end
-
-class Result
-   def initialize(message)
-      @message=message
-   end
-end

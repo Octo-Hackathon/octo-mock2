@@ -7,6 +7,7 @@ var app      = express();                               // create our app w/ exp
 
     // configuration =================
 	countyController = require('./service/controllers/countyController');
+    remoteServiceController = require('./service/controllers/remoteServiceController');
 
 //mongoose.connect('mongodb://localhost:27017/mean-marketplace');
 
@@ -31,6 +32,8 @@ app.get('/', function (req, res) {
  app.get('/api/search', countyController.searchByCountyState);
  app.get('/api/test', countyController.test); 
  app.get('/api/autoComplete', countyController.autoComplete); 
+ app.get('/api/getHousingInfo', remoteServiceController.getHousingInfo); 
+ app.get('/api/getPopulationInfo', remoteServiceController.getPopulationInfo); 
  
 
 exports.app = app;

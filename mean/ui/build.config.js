@@ -68,10 +68,17 @@ module.exports = {
       'vendor/restangular/dist/restangular.min.js',
       'vendor/lodash/dist/lodash.min.js',
       'vendor/angular-mocks/angular-mocks.js',
-      'vendor/angular-filter/dist/angular-filter.min.js'
+      'vendor/chartist/dist/chartist.min.js',
+      'vendor/angular-filter/dist/angular-filter.min.js',
+      'vendor/angular-chartist.js/dist/angular-chartist.js',
+      'vendor/ladda/dist/spin.min.js',
+      'vendor/ladda/dist/ladda.min.js',
+      'vendor/angular-ladda/dist/angular-ladda.js'
     ],
     css: [
-       'vendor/font-awesome/css/font-awesome.min.css'
+       'vendor/font-awesome/css/font-awesome.min.css',
+       'vendor/chartist/dist/chartist.min.css',
+       'vendor/ladda/dist/ladda.min.css'
     ],
     assets: [
     ],
