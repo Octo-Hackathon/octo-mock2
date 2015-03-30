@@ -4,6 +4,7 @@ var app      = express();                               // create our app w/ exp
     var morgan = require('morgan');             // log requests to the console (express4)
     var bodyParser = require('body-parser');    // pull information from HTML POST (express4)
     var methodOverride = require('method-override'); // simulate DELETE and PUT (express4)
+    var Q = require("q"); //load Q
 
     // configuration =================
 	countyController = require('./service/controllers/countyController');
