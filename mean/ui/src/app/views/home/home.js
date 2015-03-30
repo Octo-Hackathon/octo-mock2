@@ -25,11 +25,14 @@
         function SearchController($scope, Restangular, $state, $filter) {
             $scope.hasError = 0;
             $scope.search = function () {
+                $scope.loginLoading = true;
                 Restangular.one('api').customGET('search',{'q':$scope.query})
                 .then(function(result) {
+                    $scope.loginLoading = false;
                     $scope.hasError = 0;
-                    $state.transitionTo('results', {'q':$scope.query});
+                    $state.transitionTo('results', {'fips':result.stfips,'q':$scope.query});
                 }, function() {
+                    $scope.loginLoading = false;
                     $scope.hasError = 1;
                 });
             };

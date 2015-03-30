@@ -118,17 +118,29 @@ Stylesheet: Base Stylesheet
 			color:@med-blue;
 			box-shadow: inset 0px 0px 10px 0px lighten(@gray, 40%);
 			border-radius: 4px;
+			
+			p {
+				margin-top:.8em;	
+			}
 		}
 		.info-tile {
-			background-color:fade(@gray, 80%);
 			
 			h3 {
-				background-color:@orange;
 				font-weight:700;
-				color:@white;
+				color:@gray;
 				padding-top:1.2em;
-				padding-bottom:1.2em;
+				padding-bottom:.5em;
 				margin:0;
+				margin-bottom:.4em;
+				border-bottom-color:@gray-light;
+				background-color:transparent;
+				
+				span {
+					font-size:1.5em;
+					color:@orange;
+					display:inline-block;
+					margin-right:.4em;
+				}
 			}
 			img {
 				width:260px;
@@ -151,13 +163,16 @@ Stylesheet: Base Stylesheet
 			}
 			
 			border-left: 5px solid @orange;
-			padding-left: .9em;
+			padding-left: .5em;
 			
 		}
 	}
 	
 	.info-tile {
 		margin-bottom:1.2em;
+		border-top-left-radius:25px;
+		border-top-right-radius:25px;
+		padding-bottom:20px;
 		
 		h3 {
 			font-weight:300;
@@ -167,6 +182,8 @@ Stylesheet: Base Stylesheet
 			padding:.4em;	
 			display:block;
 			border-bottom:2px solid darken(@gray, 5%);
+			border-top-left-radius:10px;
+			border-top-right-radius:10px;
 		}
 		h6 {
 			color:@med-blue;	
@@ -180,15 +197,20 @@ Stylesheet: Base Stylesheet
 		display:block;
 	}
 	.score-county {
-		color:@gray;
+		color:@gray-light;
 		font-size:1.5em;	
 		font-weight:400;
 		display:block;
 		border:1px solid @gray-light;
 		margin-top:.9em;
+		height:52px;
+		line-height:50px;
+		border-radius:25px;
 		
 		img {
 			margin-right:.4em;
+			border-top-left-radius:25px;
+			border-bottom-left-radius:25px;
 		}
 	}
 	.tile-footer {
@@ -197,4 +219,18 @@ Stylesheet: Base Stylesheet
 		font-weight:300;
 		padding:.4em;
 		border-top:2px solid lighten(@gray-light, 20%);
+		border-bottom-left-radius:10px;
+		border-bottom-right-radius:10px;
+	}
+	
+	.progress-bar {
+		background-color:@med-blue;	
+	}
+	.progress {
+		margin-bottom:.1em;	
+	}
+	
+	.desc {
+		margin-bottom:.4em;	
+		font-size:70%;
 	}
