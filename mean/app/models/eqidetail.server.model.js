@@ -1,6 +1,10 @@
-var mongoose = require('mongoose');
+var mongoose = require('mongoose'),
+	Schema = mongoose.Schema;
 
-module.exports = mongoose.model('eqidetail',{
+/**
+ * Article Schema
+ */
+var EqidetailSchema = new Schema({
                                 stateCode : String,
                                 stateDescription : String,
                                 countyCode : String,
@@ -9,4 +13,6 @@ module.exports = mongoose.model('eqidetail',{
                                 variableDescription : String,
                                 variableValue : Number,
                                 domain : String
-                });
+});
+
+mongoose.model('eqidetail', EqidetailSchema);

@@ -1,7 +1,9 @@
+'use strict';
+
 var should = require('should'),
 	request = require('supertest'),
-	app = require('../server').app;
-	//agent = request.agent(app);
+	app = require('../../server'),
+	agent = request.agent(app);
 
 
 /**
@@ -15,15 +17,15 @@ describe('County Search Test', function() {
 
 	
 	it('should be able to search country and return results for each domain and overall', function(done) {
-		request(app).get('/api/search?q=Fairfax County,VA')
+		agent.get('/api/search?q=Fairfax County,VA')
 			.end(function(req, res) {
 				// Call the assertion callback
 				//res.body.should.be.an.Array.with.lengthOf(5);
 				var result = res.body;				
-				result.state.should.match("VA");
+				result.state.should.match('VA');
 				//result.should.have.property('overall_result_perc');
 				result.overall_result_perc.should.be.within(0,100);
-				result.overall_result_rate.should.match("Good");
+				result.overall_result_rate.should.match('Good');
 
 				result.should.containDeep({detail:{air:{nitro:7.950482}}});
 				result.should.containDeep({detail:{water:{drought:1.616873}}});
@@ -36,7 +38,7 @@ describe('County Search Test', function() {
 				result.detail.infra.overall_perc.should.be.within(0,100);
 				result.detail.socio.overall_perc.should.be.within(0,100);
 				
-				result.detail.socio.overall_rate.should.match("Good");
+				result.detail.socio.overall_rate.should.match('Good');
 				
 				result.detail.air.nitro_perc.should.be.within(0,100);
 				result.detail.water.drought_perc.should.be.within(0,100);
@@ -48,7 +50,7 @@ describe('County Search Test', function() {
 	});
 
 	it('should return list of counties', function(done) {
-		request(app).get('/api/autoComplete?q=Fair')
+		agent.get('/api/autoComplete?q=Fair')
 			.end(function(req, res) {
 				// Call the assertion callback
 				var results = res.body.results;
@@ -63,8 +65,3 @@ describe('County Search Test', function() {
 		done();
 	});*/
 });
-
-
-
-
-

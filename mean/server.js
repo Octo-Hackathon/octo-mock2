@@ -1,45 +1,50 @@
-var express = require("express");
-var app      = express();                               // create our app w/ express
-    var mongoose = require('mongoose');                     // mongoose for mongodb
-    var morgan = require('morgan');             // log requests to the console (express4)
-    var bodyParser = require('body-parser');    // pull information from HTML POST (express4)
-    var methodOverride = require('method-override'); // simulate DELETE and PUT (express4)
-    var Q = require("q"); //load Q
+'use strict';
+/**
+ * Module dependencies.
+ */
+var init = require('./config/init')(),
+	config = require('./config/config'),
+	mongoose = require('mongoose'),
+	chalk = require('chalk'),
+	Q = require('q');
 
-    // configuration =================
-	countyController = require('./service/controllers/countyController');
-    remoteServiceController = require('./service/controllers/remoteServiceController');
+/**
+ * Main application entry file.
+ * Please note that the order of loading is important.
+ */
 
-//mongoose.connect('mongodb://localhost:27017/mean-marketplace');
-
-    mongoose.connect('mongodb://127.0.0.1/octo-mock2');     // connect to mongoDB database on modulus.io
-
-    app.use(express.static(__dirname + '/ui/build'));                 // set the static files location /public/img will be /img for users
-    app.use(morgan('dev'));                                         // log every request to the console
-    app.use(bodyParser.urlencoded({'extended':'true'}));            // parse application/x-www-form-urlencoded
-    app.use(bodyParser.json());                                     // parse application/json
-    app.use(bodyParser.json({ type: 'application/vnd.api+json' })); // parse application/vnd.api+json as json
-    app.use(methodOverride());
-
-app.get('/', function (req, res) {
-	
-               res.sendFile(__dirname + '/ui/build/index.html');
-});  
-
-
-
-//REST API
- 
- app.get('/api/search', countyController.searchByCountyState);
- app.get('/api/test', countyController.test); 
- app.get('/api/autoComplete', countyController.autoComplete); 
- app.get('/api/getHousingInfo', remoteServiceController.getHousingInfo); 
- app.get('/api/getPopulationInfo', remoteServiceController.getPopulationInfo); 
- 
-
-exports.app = app;
-
-
-app.listen(3000, function() {
-               console.log('Mock2 app started on port 3000...');
+// Bootstrap db connection
+var db = mongoose.connect(config.db.uri, config.db.options, function(err) {
+	if (err) {
+		console.error(chalk.red('Could not connect to MongoDB!'));
+		console.log(chalk.red(err));
+	}
 });
+mongoose.connection.on('error', function(err) {
+	console.error(chalk.red('MongoDB connection error: ' + err));
+	process.exit(-1);
+	}
+);
+
+// Init the express application
+var app = require('./config/express')(db);
+
+// Bootstrap passport config
+require('./config/passport')();
+
+// Start the app by listening on <port>
+app.listen(config.port);
+
+// Expose app
+exports = module.exports = app;
+
+// Logging initialization
+console.log('--');
+console.log(chalk.green(config.app.title + ' application started'));
+console.log(chalk.green('Environment:\t\t\t' + process.env.NODE_ENV));
+console.log(chalk.green('Port:\t\t\t\t' + config.port));
+console.log(chalk.green('Database:\t\t\t' + config.db.uri));
+if (process.env.NODE_ENV === 'secure') {
+	console.log(chalk.green('HTTPs:\t\t\t\ton'));
+}
+console.log('--');
