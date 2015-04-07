@@ -1,8 +1,7 @@
 class EqiResultsController < ApplicationController
   require 'csv'
   before_action :set_eqi_result, only: [:show, :edit, :update, :destroy]
-
-  # GET /migrations
+# GET /migrations
   # GET /migrations.json
   def migrate
     #Deleting all the data before the migration
@@ -62,7 +61,6 @@ class EqiResultsController < ApplicationController
     result = Result.new("Successfully Executed")    
     render json: result
   end
-
   # GET /eqi_results
   # GET /eqi_results.json
   def index
@@ -86,7 +84,7 @@ class EqiResultsController < ApplicationController
   # POST /eqi_results
   # POST /eqi_results.json
   def create
-    @eqi_result = EqiResult.new(eqi_result_params)
+   @eqi_result = EqiResult.new(eqi_result_params)
 
     respond_to do |format|
       if @eqi_result.save
@@ -116,7 +114,7 @@ class EqiResultsController < ApplicationController
   # DELETE /eqi_results/1
   # DELETE /eqi_results/1.json
   def destroy
-    @eqi_result.destroy
+     @eqi_result.destroy
     respond_to do |format|
       format.html { redirect_to eqi_results_url, notice: 'Eqi result was successfully destroyed.' }
       format.json { head :no_content }

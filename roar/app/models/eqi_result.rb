@@ -1,4 +1,6 @@
+
 class EqiResult
+
   include Mongoid::Document
   store_in collection: "eqiresults", database: "octo-mock2"
   field :stateCode, type: String
@@ -7,4 +9,8 @@ class EqiResult
   field :countyDescription, type: String
   field :domain, type: String
   field :eqi, type: Float
+
+
+
 end
+

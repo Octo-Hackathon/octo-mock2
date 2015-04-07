@@ -1,19 +1,18 @@
 class HouseController < ApplicationController
-
-  # GET /house/1
+# GET /house/1
   # GET /house/1.json
   def show
-  	Rails.logger = Logger.new(STDOUT)
-  	logger.info "fips code is :" << params[:id]
-  	fips = params[:id]
-  	if(fips.length == 4)
-  		fips = "0"<<fips
-  	end
-  	state = fips[0, 2]
-  	county = fips[2, fips.length - 1]
-  	logger.info "state code is :" << state
-  	logger.info "county code is :" << county
-  	response = HTTParty.get('http://api.census.gov/data/2010/sf1?get=H0030001,H0030002,H0030003,H0040001,H0040002,H0040003,H0040004&for=county:'<<county<<'&in=state:'<<state<<'&key=a81b69c2d8637be2124661c1dfdddf4f7dd03adf')   
+    Rails.logger = Logger.new(STDOUT)
+    logger.info "fips code is :" << params[:id]
+    fips = params[:id]
+    if(fips.length == 4)
+      fips = "0"<<fips
+    end
+    state = fips[0, 2]
+    county = fips[2, fips.length - 1]
+    logger.info "state code is :" << state
+    logger.info "county code is :" << county
+    response = HTTParty.get('http://api.census.gov/data/2010/sf1?get=H0030001,H0030002,H0030003,H0040001,H0040002,H0040003,H0040004&for=county:'<<county<<'&in=state:'<<state<<'&key=a81b69c2d8637be2124661c1dfdddf4f7dd03adf')   
     logger.info "response code is :" << response.response.code
     if(response.code == 200) then
       result = eval(response.body)
