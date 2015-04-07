@@ -2,7 +2,7 @@ class EqiDetailsController < ApplicationController
   require 'csv'
   before_action :set_eqi_detail, only: [:show, :edit, :update, :destroy]
 
-  # GET /migrations
+   # GET /migrations
   # GET /migrations.json
   def migrate
     #Deleting all the data before the migration
@@ -135,7 +135,6 @@ class EqiDetailsController < ApplicationController
     result = Result.new("Successfully Executed")    
     render json: result
   end
-
   # GET /eqi_details
   # GET /eqi_details.json
   def index

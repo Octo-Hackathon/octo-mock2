@@ -5,12 +5,6 @@
 <table>
   <thead>
     <tr>
-      <th>Statecode</th>
-      <th>Statedescription</th>
-      <th>Countycode</th>
-      <th>Countydescription</th>
-      <th>Domain</th>
-      <th>Eqi</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -18,12 +12,6 @@
   <tbody>
     <% @eqi_results.each do |eqi_result| %>
       <tr>
-        <td><%= eqi_result.stateCode %></td>
-        <td><%= eqi_result.stateDescription %></td>
-        <td><%= eqi_result.countyCode %></td>
-        <td><%= eqi_result.countyDescription %></td>
-        <td><%= eqi_result.domain %></td>
-        <td><%= eqi_result.eqi %></td>
         <td><%= link_to 'Show', eqi_result %></td>
         <td><%= link_to 'Edit', edit_eqi_result_path(eqi_result) %></td>
         <td><%= link_to 'Destroy', eqi_result, method: :delete, data: { confirm: 'Are you sure?' } %></td>

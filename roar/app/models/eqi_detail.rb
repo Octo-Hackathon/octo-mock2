@@ -1,4 +1,6 @@
+
 class EqiDetail
+
   include Mongoid::Document
   store_in collection: "eqidetails", database: "octo-mock2"
   field :stateCode, type: String
@@ -9,4 +11,10 @@ class EqiDetail
   field :variableDescription, type: String
   field :variableValue, type: Float
   field :domain, type: String
+
+
+
+
+
 end
+

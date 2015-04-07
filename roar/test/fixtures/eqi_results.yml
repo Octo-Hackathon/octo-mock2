@@ -1,17 +1,25 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  stateCode: 
-  stateDescription: 
-  countyCode: 
-  countyDescription: 
-  domain: 
-  eqi: 
+# This model initially had no columns defined.  If you add columns to the
+# model remove the '{}' from the fixture names and add the columns immediately
+# below each fixture, per the syntax in the comments below
+#
+ one:   
+   stateCode: AL
+   stateDescription: Alabama
+   countyCode: 01006
+   countyDescription: Barbour1 County
+   domain: Built
+   eqi: 0.0488544
 
-two:
-  stateCode: 
-  stateDescription: 
-  countyCode: 
-  countyDescription: 
-  domain: 
-  eqi: 
+# column: value
+#
+ two: 
+   stateCode: AL
+   stateDescription: Alabama
+   countyCode: 01004
+   countyDescription: Baldwin1 County
+   domain: Overall
+   eqi: 0.2002343
+
+#  column: value
