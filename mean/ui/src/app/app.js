@@ -10,7 +10,8 @@
             'restangular',
             'angular.filter',
             'angular-chartist',
-            'angular-ladda'
+            'angular-ladda',
+            'stpa.morris'
         ])
 
         .config( function initRoutes ($urlRouterProvider, $stateProvider, RestangularProvider, $provide, laddaProvider) {

@@ -60,6 +60,7 @@ module.exports = {
    */
   vendor_files: {
     js: [
+      'vendor/jquery/dist/jquery.min.js',
       'vendor/angular/angular.js',
       'vendor/angular-bootstrap/ui-bootstrap-tpls.min.js',
       'vendor/placeholders/angular-placeholders-0.0.1-SNAPSHOT.min.js',
@@ -73,12 +74,15 @@ module.exports = {
       'vendor/angular-chartist.js/dist/angular-chartist.js',
       'vendor/ladda/dist/spin.min.js',
       'vendor/ladda/dist/ladda.min.js',
-      'vendor/angular-ladda/dist/angular-ladda.js'
+      'vendor/angular-ladda/dist/angular-ladda.js',
+      'vendor/raphael/raphael-min.js',
+      'vendor/morris.js/morris.min.js'
     ],
     css: [
        'vendor/font-awesome/css/font-awesome.min.css',
        'vendor/chartist/dist/chartist.min.css',
-       'vendor/ladda/dist/ladda.min.css'
+       'vendor/ladda/dist/ladda.min.css',
+       'vendor/morris.js/morris.css'
     ],
     assets: [
     ],
