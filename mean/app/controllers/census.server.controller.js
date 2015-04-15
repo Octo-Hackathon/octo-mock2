@@ -24,7 +24,7 @@ exports.getHousingInfo = function(req, res) {
          //   }
 
            
-        });
+        }); 
 
     //Client.on('error', function(err1) {
     //    console.log('Error occured in getHousingInfo');
