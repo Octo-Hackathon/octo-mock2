@@ -1,10 +1,14 @@
 == README
-ROAR is Ruby on Rails application 
+
+ROAR is Ruby on Rails application servicing mainly two kinds of public data sets
+1)Environmetal Protectopn Agency 2005 published data categorized by county and state
+2)US census 2010 data service wrapper
 
 * Ruby version 2.0 and above
 * RAILS version 4.2.0
 
 * System dependencies
+
 Mongoid - db driver 
 CSV - package to read and write csv formatted files
 Httparty - api to read http/rest requests on web
@@ -12,7 +16,7 @@ Httparty - api to read http/rest requests on web
 
 * Configuration
 
-Create Project by using skip_active_record
+Create Project by using skip-active-record
 $rails new roar --skip-active-record
 bundle install should show the following
 $ bundle install
@@ -89,11 +93,16 @@ This project is specifically created to serve MongoDB based development
 
 database name is set as octo-mock2 with no authentication
 collection names are eqiresults , eqidetails
+
 * How to run the test suite
+
 make sure you have not cretaed the project using Active record format
-make sure rake 10.4.2 is installed if not install rake by
-gem intall  rake
-bundle install
+make sure rake 10.4.2 is installed if not install rake by gem intall  rake
+make sure bundle install is run
+unit test cases are run using RSPEC 
+Fixtures are not used for db tests
+All controllers test classes have been covered with unit tests
+run tests by issuing following command
 
 > rake test RAILS_ENV=test
 
@@ -115,7 +124,7 @@ http://<host>/admin/getPopulationInfo/:id'
 * Deployment instructions
 
 deploy ROAR project as a whole on any directory  where Ruby classpaths are set. Since this project has only API's and no Views, It can be accessed when hosted on 
-either local RAILS server or Apache. The path structure should like the one noted below
+either local RAILS server Webrick or Apache. The path structure should like the one noted below
 
 
 ROAR
