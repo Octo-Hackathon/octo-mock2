@@ -12,23 +12,23 @@ exports.getHousingInfo = function(req, res) {
 
     console.log('Calling sensus getHousingInfo');
 
-    var request = client.get('http://ec2-54-174-149-43.compute-1.amazonaws.com/admin/getHousingInfo1/'+fips, function(data, response, err){
+    var request = client.get('http://ec2-54-174-149-43.compute-1.amazonaws.com/admin/getHousingInfo/'+fips, function(data, response, err){
                           
-            if(err) {
-                console.log('Error occured in getHousingInfo');
-                res.send('Error Occured');
-            } else {
+           // if(err) {
+          //      console.log('Error occured in getHousingInfo');
+        //        res.send('Error Occured');
+        //    } else {
                 var results= data;
                 console.log(results);                                                
                 res.send(results);
-            }
+         //   }
 
            
         });
 
-    Client.on('error', function(err1) {
-        console.log('Error occured in getHousingInfo');
-    });
+    //Client.on('error', function(err1) {
+    //    console.log('Error occured in getHousingInfo');
+   // });
 
     
 
@@ -40,21 +40,21 @@ exports.getPopulationInfo = function(req, res) {
     var client = new Client();
     var fips = req.query.q;
 
-    var request = client.get('http://ec2-54-174-149-43.compute-1.amazonaws.com/admin/getPopulationInfo1/'+fips, function(data, response, err){
-            if(err) {
-                console.log('Error occured in getHousingInfo');
-                res.send('Error Occured');
-            }                    
-           else {
+    var request = client.get('http://ec2-54-174-149-43.compute-1.amazonaws.com/admin/getPopulationInfo/'+fips, function(data, response, err){
+            //if(err) {
+            //    console.log('Error occured in getHousingInfo');
+           //     res.send('Error Occured');
+           // }                    
+          // else {
                 var results= data;
                 console.log(results);                                                
                 res.send(results);
-            }
+          //  }
            
         });
 
-    Client.on('error', function(err1) {
-        console.log('Error occured in getPopulationInfo');
-    });
+    //Client.on('error', function(err1) {
+    //    console.log('Error occured in getPopulationInfo');
+   // });
   
 };
