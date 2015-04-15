@@ -1,6 +1,6 @@
 [![MEAN.JS Logo](http://meanjs.org/img/logo-small.png)](http://meanjs.org/)
 
-This application is based on MEAN.JS which is a full-stack JavaScript open-source solution and provides a solid starting point for [MongoDB](http://www.mongodb.org/), [Node.js](http://www.nodejs.org/), [Express](http://expressjs.com/), and [AngularJS](http://angularjs.org/) based applications. T
+This application is based on MEAN.JS which is a full-stack JavaScript open-source solution and provides a solid starting point for [MongoDB](http://www.mongodb.org/), [Node.js](http://www.nodejs.org/), [Express](http://expressjs.com/), and [AngularJS](http://angularjs.org/) based applications.
 
 ## Prerequisites
 Make sure you have installed all of the following prerequisites on your development machine:
