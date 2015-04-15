@@ -1,26 +1,152 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+ROAR is Ruby on Rails application servicing mainly two kinds of public data sets
+1)Environmetal Protectopn Agency 2005 published data categorized by county and state
+2)US census 2010 data service wrapper
 
-Things you may want to cover:
-
-* Ruby version
+* Ruby version 2.0 and above
+* RAILS version 4.2.0
 
 * System dependencies
 
+Mongoid - db driver 
+CSV - package to read and write csv formatted files
+Httparty - api to read http/rest requests on web
+
+
 * Configuration
 
+Create Project by using skip-active-record
+$rails new roar --skip-active-record
+bundle install should show the following
+$ bundle install
+DL is deprecated, please use Fiddle
+Using rake 10.4.2
+Using i18n 0.7.0
+Using json 1.8.2
+Using minitest 5.5.1
+Using thread_safe 0.3.5
+Using tzinfo 1.2.2
+Using activesupport 4.2.0
+Using builder 3.2.2
+Using erubis 2.7.0
+Using mini_portile 0.6.2
+Using nokogiri 1.6.6.2
+Using rails-deprecated_sanitizer 1.0.3
+Using rails-dom-testing 1.0.6
+Using loofah 2.0.1
+Using rails-html-sanitizer 1.0.2
+Using actionview 4.2.0
+Using rack 1.6.0
+Using rack-test 0.6.3
+Using actionpack 4.2.0
+Using globalid 0.3.3
+Using activejob 4.2.0
+Using mime-types 2.4.3
+Using mail 2.6.3
+Using actionmailer 4.2.0
+Using activemodel 4.2.0
+Using arel 6.0.0
+Using activerecord 4.2.0
+Using debug_inspector 0.0.2
+Using binding_of_caller 0.7.2
+Using bson 2.3.0
+Using bson_ext 1.5.1
+Using columnize 0.9.0
+Using byebug 4.0.5
+Using coffee-script-source 1.9.1
+Using execjs 2.5.0
+Using coffee-script 2.4.1
+Using thor 0.19.1
+Using railties 4.2.0
+Using coffee-rails 4.1.0
+Using connection_pool 2.1.3
+Using hike 1.2.3
+Using multi_xml 0.5.5
+Using httparty 0.13.3
+Using multi_json 1.11.0
+Using jbuilder 2.2.12
+Using jquery-rails 4.0.3
+Using optionable 0.2.0
+Using moped 2.0.4
+Using origin 2.1.1
+Using mongoid 4.0.2 from git://github.com/mongoid/mongoid.git (at master)
+Using bundler 1.9.2
+Using tilt 1.4.1
+Using sprockets 2.12.3
+Using sprockets-rails 2.2.4
+Using rails 4.2.0
+Using rdoc 4.2.0
+Using sass 3.4.13
+Using sass-rails 5.0.3
+Using sdoc 0.4.1
+Using turbolinks 2.5.3
+Using tzinfo-data 1.2015.2
+Using uglifier 2.7.1
+Using web-console 2.1.2
+Bundle complete! 14 Gemfile dependencies, 63 gems now installed.
+Use `bundle show [gemname]` to see where a bundled gem is installed.
 * Database creation
+This project is specifically created to serve MongoDB based development
 
 * Database initialization
 
+database name is set as octo-mock2 with no authentication
+collection names are eqiresults , eqidetails
+
 * How to run the test suite
+
+make sure you have not cretaed the project using Active record format
+make sure rake 10.4.2 is installed if not install rake by gem intall  rake
+make sure bundle install is run
+unit test cases are run using RSPEC 
+Fixtures are not used for db tests
+All controllers test classes have been covered with unit tests
+run tests by issuing following command
+
+> rake test RAILS_ENV=test
+
 
 * Services (job queues, cache servers, search engines, etc.)
 
+1) To migrate the EQI results EPA data into the database use the following api. This api gets locally stored csv file and migrates the data into mongodb collection EQIResults
+http://<host>/admin/migrate/EQIResults'
+2) To migrate the EQI EPA details data into the database use the following api. This api gets locally stored csv file and migrates the data into mongodb collection EQIDetails
+http://<host>/admin/migrate/EQIDetails'
+3) To get the Zip of a city information 
+http://<host>/admin/getZipInformation/:id(.:json)'
+4) To get the housing information given a county and state using SFIPS id . returns JSON object. if web service is not running or bad input then it returns empty json
+http://<host>/admin/getHousingInfo/:id'
+5) To get the population information like population  with race , sex given a county and state (SFIPS). Returns JSON object. if web service is not running or bad input then it returns empty json
+http://<host>/admin/getPopulationInfo/:id'
+
+
 * Deployment instructions
 
+deploy ROAR project as a whole on any directory  where Ruby classpaths are set. Since this project has only API's and no Views, It can be accessed when hosted on 
+either local RAILS server Webrick or Apache. The path structure should like the one noted below
+
+
+ROAR
+    APP
+       Controllers
+       Models
+       Views
+       Assets
+       helpers
+    Bin
+    Config
+    DB
+    Lib
+    Log
+    Public
+    test
+    	controolers
+    	models
+    	fixtures
+    vendors
+    Gemfile
+    
 * ...
 
 
