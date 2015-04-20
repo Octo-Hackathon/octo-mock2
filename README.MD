@@ -4,7 +4,7 @@ INFLO
 By Octo Labs
 ----------------------
 
-**INFLO** is a contextual and situational awareness dashboard build on top of data sets from EPA and the US Census Bureau.  **INFLO** allows the user to search by city name and provides situational data such as median income, % unemployed, travel safety, air quality, water quality, and demographical information such as gender, race and housing.  **INFLO** also provides an aggregated score or an INFLO Rating which serves index for quality of living for that city.  Currently **INFLO** focuses on two different types of aspects of visualizations: basic bar charts to display historical EPA data and near real-time charts for displaying the more frequently updated US Census Bureau data.
+**INFLO** is a contextual and  situational awareness dashboard build on top of data sets from EPA and the US Census Bureau.  **INFLO** allows the user to search by city name and provides situational data such as median income, % unemployed, travel safety, air quality, water quality, and demographical information such as gender, race and housing.  **INFLO** also provides an aggregated score or an INFLO Rating which serves index for quality of living for that city.  Currently **INFLO** focuses on two different types of aspects of visualizations: basic bar charts to display historical EPA data and near real-time charts for displaying the more frequently updated US Census Bureau data.
 
 Developing INFLO
 ================
