@@ -71,7 +71,7 @@ module.exports = function(db) {
 
 	// Set views path and view engine
 	app.set('view engine', 'html');
-	app.set('views', './ui/build');	
+	app.set('views', './inflo/ui/build');	 
 
 	// Enable logger (morgan)
 	app.use(morgan(logger.getLogFormat(), logger.getLogOptions()));
