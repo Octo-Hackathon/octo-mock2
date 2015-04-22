@@ -7,10 +7,10 @@ var main = require('../../app/controllers/main.server.controller');
 
 module.exports = function(app) {
 
-	app.route('/api/autoComplete')
+	app.route('/inflo/api/autoComplete')
 		.get(main.autoComplete);	
 
-	app.route('/api/search')
+	app.route('/inflo/api/search')
 		.get(main.searchByCountyState);		
 
 };

@@ -7,10 +7,10 @@ var census = require('../../app/controllers/census.server.controller');
 
 module.exports = function(app) {
 
-	app.route('/api/getHousingInfo')
+	app.route('/inflo/api/getHousingInfo')
 		.get(census.getHousingInfo);				
 
-	app.route('/api/getPopulationInfo')
+	app.route('/inflo/api/getPopulationInfo')
 		.get(census.getPopulationInfo);	
 
 };
