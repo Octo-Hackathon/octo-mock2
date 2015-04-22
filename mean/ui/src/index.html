@@ -5,7 +5,7 @@
     <title>Inflo | Know Your Neighborhood</title>
 
     <% styles.forEach( function ( file ) { %>
-    <link rel="stylesheet" type="text/css" href="<%= file %>" /><% }); %>
+    <link rel="stylesheet" type="text/css" href="inflo/<%= file %>" /><% }); %>
 
 
   </head>
@@ -16,6 +16,6 @@
   </body>
   <!-- compiled JavaScript -->
   <% scripts.forEach( function ( file ) { %>
-  <script type="text/javascript" src="<%= file %>"></script><% }); %>
+  <script type="text/javascript" src="inflo/<%= file %>"></script><% }); %>
 
 </html>
