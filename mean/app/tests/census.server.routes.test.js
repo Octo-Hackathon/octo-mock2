@@ -18,7 +18,7 @@ describe('Sensus Test', function() {
 	
 	it('should return housing info', function(done) {
 
-		agent.get('/api/getHousingInfo?q=01003')
+		agent.get('/inflo/api/getHousingInfo?q=01003')
 			.end(function(req, res) {
 				// Call the assertion callback
 				var results = res.body;
@@ -32,7 +32,7 @@ describe('Sensus Test', function() {
 
 	it('should return population info', function(done) {
 
-		agent.get('/api/getPopulationInfo?q=01003')
+		agent.get('/inflo/api/getPopulationInfo?q=01003')
 			.end(function(req, res) {
 				// Call the assertion callback
 				var results = res.body;

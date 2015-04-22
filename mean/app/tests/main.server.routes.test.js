@@ -17,7 +17,7 @@ describe('County Search Test', function() {
 
 	
 	it('should be able to search country and return results for each domain and overall', function(done) {
-		agent.get('/api/search?q=Fairfax County,VA')
+		agent.get('/inflo/api/search?q=Fairfax County,VA')
 			.end(function(req, res) {
 				// Call the assertion callback
 				//res.body.should.be.an.Array.with.lengthOf(5);
@@ -50,7 +50,7 @@ describe('County Search Test', function() {
 	});
 
 	it('should return list of counties', function(done) {
-		agent.get('/api/autoComplete?q=Fair')
+		agent.get('/inflo/api/autoComplete?q=Fair')
 			.end(function(req, res) {
 				// Call the assertion callback
 				var results = res.body.results;
