@@ -71,7 +71,7 @@ module.exports = function(db) {
 
 	// Set views path and view engine
 	app.set('view engine', 'html');
-	app.set('views', './inflo/ui/build');	 
+	app.set('views', './ui/build');	
 
 	// Enable logger (morgan)
 	app.use(morgan(logger.getLogFormat(), logger.getLogOptions()));
@@ -99,7 +99,7 @@ module.exports = function(db) {
 	app.disable('x-powered-by');
 
 	// Setting the app router and static folder
-	app.use(express.static(path.resolve('./inflo/ui/build')));
+	app.use(express.static(path.resolve('./ui/build')));
 
 	// CookieParser should be above session
 	app.use(cookieParser());
