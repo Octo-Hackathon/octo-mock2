@@ -26,7 +26,7 @@
             $scope.hasError = 0;
             $scope.search = function () {
                 $scope.loginLoading = true;
-                Restangular.one('inflo/api').customGET('search',{'q':$scope.query})
+                Restangular.one('api').customGET('search',{'q':$scope.query})
                 .then(function(result) {
                     $scope.loginLoading = false;
                     $scope.hasError = 0;
@@ -39,7 +39,7 @@
 
             $scope.getLocation = function(val) {
                 $scope.hasError = 0;
-                return Restangular.one('inflo/api').customGET('autoComplete',{'q':val})
+                return Restangular.one('api').customGET('autoComplete',{'q':val})
                 .then(function(result) {
                     result.results = $filter('unique')(result.results);
                     return result.results.map(function(item){

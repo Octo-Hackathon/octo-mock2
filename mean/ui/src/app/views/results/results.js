@@ -19,13 +19,13 @@
                 data:{ pageTitle: 'Inflo | Know Your Neighborhood' },
                 resolve: {
                     countyData: function(Restangular, $stateParams) {
-                        return Restangular.one('inflo/api').customGET('search',{'q':$stateParams.q});
+                        return Restangular.one('api').customGET('search',{'q':$stateParams.q});
                     },
                     populationData: function(Restangular, $stateParams) {
-                        return Restangular.one('inflo/api').customGET('getPopulationInfo',{'q':$stateParams.fips});
+                        return Restangular.one('api').customGET('getPopulationInfo',{'q':$stateParams.fips});
                     },
                     housingData: function(Restangular, $stateParams) {
-                        return Restangular.one('inflo/api').customGET('getHousingInfo',{'q':$stateParams.fips});
+                        return Restangular.one('api').customGET('getHousingInfo',{'q':$stateParams.fips});
                     }
                 }
             })
