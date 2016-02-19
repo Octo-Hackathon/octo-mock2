@@ -9,11 +9,11 @@ var should = require('should'),
 
 /**
  * Census routes tests
- */
+ 
 describe('Sensus Test', function() {
 	/*beforeEach(function(done) {
 			done();
-	});*/
+	});
 
 	
 	it('should return housing info', function(done) {
@@ -42,7 +42,7 @@ describe('Sensus Test', function() {
 			});
 	});		
 
-
+*/
 
 	/*afterEach(function(done) {
 		done();
